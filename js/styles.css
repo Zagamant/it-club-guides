@@ -1,0 +1,86 @@
+@charset "utf-8";
+/* CSS Document */
+
+*
+{
+	font-family: 'Roboto', sans-serif;
+}
+nav{
+	font-size:12px;
+	background-color:grey;
+	color:white;
+	border: 1px solid black;
+	float:left;
+	padding: 1%;
+	padding-left: 1%;
+	margin-right:2%;
+}
+nav a:active
+{
+	color:black;
+}
+nav a
+{
+	color:white;
+	
+}
+.content {
+	text-align: justify;
+	
+}
+.content ol{
+	text-align: justify;
+	margin-left: 1%;
+}
+
+details p
+{
+	background-color: lightgray;
+	padding:2%;
+	width:70%;
+	border:1px solid black;
+	align:center;
+	margin:0 auto;
+	
+}
+
+code
+{
+	display: block;
+	background-color: lightgray;
+	padding:2%;
+	width:70%;
+	border:1px solid black;
+	align:center;
+	margin:0 auto;
+}
+b
+{
+	text-decoration: underline;
+}
+table {
+  border-collapse: collapse;
+	width:60%;
+	margin:0 auto;
+}
+table, th, td {
+  border: 1px solid black;
+}
+th, td {
+  text-align: center;
+padding: 1%;
+}
+
+caption
+{
+	color:red;
+	 caption-side: bottom;
+}
+
+img
+{
+	display: block;
+	margin: 0 auto;
+}
+
+	

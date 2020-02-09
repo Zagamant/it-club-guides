@@ -1,0 +1,359 @@
+﻿<!doctype html>
+<html>
+
+<head>
+	<link rel="stylesheet" href="../css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+	</script>
+
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<script src="../js/bootstrap.bundle.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+
+	<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+	<meta charset="utf-8">
+	<title>Введение в язык</title>
+</head>
+
+<body>
+	<header>
+		<nav class="navbar navbar-dark static-top navbar-expand-md navbar-dark bg-dark shadow-md">
+			<a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">IT_CLUB</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04"
+				aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarsExample04">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="#">.NET <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">С#</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Unity</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Си</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">С++</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Web</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Графика</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Пользователь ПК</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false">Dropdown</a>
+						<div class="dropdown-menu" aria-labelledby="dropdown04">
+							<a class="dropdown-item" href="#">Lego</a>
+							<a class="dropdown-item" href="#">Робототехника</a>
+							<a class="dropdown-item" href="#">Польский))</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+	</header>
+
+	<div class="container-fluid">
+		<div class="row">
+			<nav class="col-md-2 d-none d-md-block bg-light sidebar">
+				<div class="sidebar-sticky">
+					<ul class="nav flex-column">
+						<li class="nav-item">
+							<a class="nav-link active" href="#">
+								<span data-feather="home"></span>
+								Введение в язык <span class="sr-only">(current)</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Азы программирования
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Классы, объекты и работа с ними
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Методы
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Unit-тестирование
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								ООП
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Делегаты, лямбды и события
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Колекции и универсальные шаблоны(generics)
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								LINQ
+							</a>
+						</li>
+					</ul>
+
+					<h6
+						class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+						<span>Дополнительные темы(необязательные)</span>
+						<a class="d-flex align-items-center text-muted" href="#">
+							<span data-feather="plus-circle"></span>
+						</a>
+					</h6>
+					<ul class="nav flex-column mb-2">
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Current month
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Last quarter
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Social engagement
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Year-end sale
+							</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+
+			<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+				<h3>План занятия: </h3>
+				<ul>
+					<li>Знакомство с преподавателем и учениками</li>
+					<li>Техника безопасности</li>
+					<li>Обзор средств программирования</li>
+					<li>Введение в .NET Framework и .NET Core</li>
+					<li>Комментарии в коде</li>
+				</ul>
+
+				<h2>Знакомство</h2>
+				<ul>
+					<li>Познакомиться с каждым учеником</li>
+					<li>Спросить ФИО, контактный номер телефона</li>
+					<li>Создать в Telegram/VK группу для данной учебной группы</li>
+					<li>Узнать о интересах и увлечениях каждоого ученика. Пометить и записать.</li>
+				</ul>
+
+				<h2>Техника безопасности и поведение на занятиях</h2>
+				<ul>
+					<li>Запрещено оскорблять, ссориться, ругаться с другими учениками.</li>
+					<li>Запрещены ругательства и крепкие выражения</li>
+					<li>Включать и отключать компьютеры из сети строго запрещено. Подключать другие девайсы (зарядка
+						телефона и
+						пр) только под наблюдением и с разрешения преподавателя.</li>
+					<li>Использование чайника под надзором преподавателя.</li>
+					<li>Куртки должны быть на вешалках. В дождливую погоду и зимой - обязательно вытирать ноги.</li>
+					<li>Обязательно мыть после занятия чашки, выбрасывать мусор, задвигать стулья, поправлять клавиатуру
+						и
+						мышку.</li>
+					<li>Все файлы учеников должны храниться в их личной директории на диске D в будущем на github. Любые
+						сторонние файлы на рабочем
+						столе будут удаляться.</li>
+				</ul>
+
+				<h2>Введение</h2>
+				<p>
+					В данный момент у нас есть три платформы: .NET Framework, Mono(Xamarin) и .NET Core. Каждая
+					платформа
+					включает в себя следующие технологии:
+				</p>
+				<p>
+					<img class="img-fluid" src="../img/dotNetFrameworkVsCoreVsXamarin.png"
+						alt="Framework vs Core vs Xamarin">
+				</p>
+				<p>
+					Ещё есть .NET Standard. Это набор классов, методов и интерфейсов, которые позволяют писать и
+					использовать
+					общий код под все перечисленные выше платформы. Ещё на ней можно писать консольные приложения.
+				</p>
+
+				<p>
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>Тип</th>
+								<th>Название</th>
+								<th>Модификатор</th>
+								<th>Размер в памяти</th>
+								<th>Диапазон значений*</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>bool</td>
+								<td>Логический тип</td>
+								<td>-</td>
+								<td>физически - 1 бит, по факту - 1 байт</td>
+								<td>0 или 1 (true или false)</td>
+							</tr>
+							<tr>
+								<td>int</td>
+								<td>Целочисленный тип</td>
+								<td>%d</td>
+								<td>4 байта</td>
+								<td>от 3.4Е-38 до 3.4Е+38</td>
+							</tr>
+							<tr>
+								<td>float</td>
+								<td>Вещественный тип</td>
+								<td>%f</td>
+								<td>4 байта</td>
+								<td>от 3.4Е-38 до 3.4Е+38</td>
+							</tr>
+							<tr>
+								<td>double</td>
+								<td>Целочисленный тип<br>двойная точность</td>
+								<td>%lf</td>
+								<td>8 байт</td>
+								<td>от 1.7Е-308 до 1.7Е+308</td>
+							</tr>
+							<tr>
+								<td>char</td>
+								<td>Символьный тип</td>
+								<td>%d или %c</td>
+								<td>1 байт</td>
+								<td>от -128 до 127 (коды символов)</td>
+							</tr>
+							<caption>*Стоит отметить, что диапазон значений может отличаться в зависимости от
+								используемой ОС,
+								компилятора и настроек системы.</caption>
+						</tbody>
+					</table>
+				</p>
+				<h2>Создание проекта в VS.</h2>
+				<p>Рекомендуется использовать Visual Studio 2012, так как в ней меньше подсказок по коду, отсутствует
+					автозакрытие скобок, автоформатирование и многие вещи, которые упрощают разработку. Таким образом,
+					студенты
+					учатся сами следить за правильностью, чистотой и красотой кода.</p>
+				<ol>
+					<li>Запустить Visual Studio 2019</li>
+					<li>Create a new project</li>
+					<li>В окне выбрать Console App(.Net Core)</li>
+					<li>Нажимаем Next. В появившемся окне обязательно ввести название проекта и выбрать свою рабочую
+						папку. Имя
+						должно отражать суть созданного
+						проекта - обязательно! Если не выбрать папку, проект "улетит" непонятно куда (скорее всего в
+						папку
+						другого ученика)</li>
+					<li>Нажимаем Create.</li>
+				</ol>
+
+				<h2>Hello World</h2>
+				<p>У всех программистов, когда они начинают изучать новый язык, есть традиция - писать программу,
+					которая его
+					приветствует. Называется эта программа Hello, World! Для запуска программы нажмите CTRL + F5 после
+					того, как
+					напишете весь код!
+				</p>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample"
+						aria-expanded="false" aria-controls="collapseExample">
+						Развернуть код
+					</button>
+				</p>
+				<div class="collapse" id="collapseExample">
+					<pre class="prettyprint">
+						<code>
+							#define _CRT_SECURE_NO_WARNINGS
+							#include &lt;stdio.h&gt;
+							int main()
+							{
+								printf("Hello, world!\n");
+								return 0;
+							}
+						</code>
+					</pre>
+				</div>
+
+				<p>Разберем подробно</p>
+				<ul>
+					<li> <code class="prettyprint">#define _CRT_SECURE_NO_WARNINGS</code> - строчка, которая нужна для
+						того, чтобы убрать некоторые
+						ошибки
+						связанные с некоторыми устаревшими функциями. Писать ее именно в таком виде! </li>
+					<li> <code class="prettyprint">#include &lt;stdio.h&gt;</code> - подключение библиотеки, которая
+						содержит базовый функционал языка СИ
+						и
+						некоторые функции ввода и вывода. Расшифровывается как Standart Input Output - стандартная
+						библиотека
+						ввода и вывода.</li>
+					<li><code class="prettyprint">int main()</code> - здесь main() - главная функция, с выполнения
+						которой начинается работа любой
+						программы в
+						языке СИ. Если этой функции нет, то выполняться и запускаться программа не будет. int - тип
+						данных, о
+						функциях и их типах мы поговорим позже.</li>
+					<li>Открывающая { и зыкрывающая } фигурные скобки определяют начало и конец блоков кода. Например, в
+						данной
+						программе эти скобки определяют начало и конец блока main.</li>
+					<li>Функция <code class="prettyprint">printf</code> предназначена для вывода текста на экран. То,
+						что написано внутри в кавычках -
+						аргумент
+						функции, в данном случае - текст. В тексте стоит \n - это перевод текста на следующую строку.
+					</li>
+					<li><code class="prettyprint">return 0;</code> - данная строка завершает работу программы. </li>
+				</ul>
+				<h2>Комментарии в коде</h2>
+				<p>Код ваших программ обязательно нужно <b>комментировать</b> в процессе написания. Это делается для
+					того, чтобы
+					в будущем, когда Вы вернетесь к своему проекту или работе после отпуска, Вы могли быстро вспомнить
+					что и для
+					чего писали. Кроме того, писать комментарии полезно для коллег, с которыми Вы работаете.</p>
+				<p>Есть два типа комментариев - многострочный и однострочный. Однострочный комментарий выглядит так:</p>
+				<code>
+					//Вот это однострочный комментарий. Программа не воспринимает этот текст как код вообще.
+				</code>
+				<code>
+					/*Вот это многострочный комментарий.<br> Программа не воспринимает этот текст как код вообще.<br>Но
+					такой
+					комментарий должен заканчиваться вот этими символами - */
+				</code>
+				<p>Чаще и больше пишите комментарии для себя и своих коллег - это правило хорошего тона для любого, кто
+					хочет
+					стать программистом!</p>
+			</main>
+		</div>
+</body>
+
+</html>
