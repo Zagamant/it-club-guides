@@ -1,0 +1,311 @@
+﻿<!doctype html>
+<html>
+
+<head>
+	<link rel="stylesheet" href="../css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+	</script>
+
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<script src="../js/bootstrap.bundle.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+
+	<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+	<meta charset="utf-8">
+	<title>Введение в язык</title>
+</head>
+
+<body>
+	<header>
+		<nav class="navbar navbar-dark static-top navbar-expand-md navbar-dark bg-dark shadow-md">
+			<a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">IT_CLUB</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04"
+				aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarsExample04">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="#">.NET <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">С#</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Unity</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Си</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">С++</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Web</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Графика</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Пользователь ПК</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false">Dropdown</a>
+						<div class="dropdown-menu" aria-labelledby="dropdown04">
+							<a class="dropdown-item" href="#">Lego</a>
+							<a class="dropdown-item" href="#">Робототехника</a>
+							<a class="dropdown-item" href="#">Польский))</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+	</header>
+
+	<div class="container-fluid">
+		<div class="row">
+			<nav class="col-md-2 d-none d-md-block bg-light sidebar">
+				<div class="sidebar-sticky">
+					<ul class="nav flex-column">
+						<li class="nav-item">
+							<a class="nav-link" href="./1.html">
+								Введение в язык <span class="sr-only">(current)</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Азы программирования
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Классы, объекты и работа с ними
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Методы
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Unit-тестирование
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								ООП
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Делегаты, лямбды и события
+							</a>
+						</li>
+						<li class="nav-item active">
+							<a class="nav-link" href="#">
+								Коллекции и универсальные шаблоны(generics)
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								LINQ
+							</a>
+						</li>
+					</ul>
+
+					<h6
+						class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+						<span>Дополнительные темы(необязательные)</span>
+						<a class="d-flex align-items-center text-muted" href="#">
+							<span data-feather="plus-circle"></span>
+						</a>
+					</h6>
+					<ul class="nav flex-column mb-2">
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Current month
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Last quarter
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Social engagement
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Year-end sale
+							</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+
+			<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+				<h3>План занятия: </h3>
+				<ul>
+					<li>Коллекции</li>
+					<li>Виды коллекций</li>
+					<li>Интерфейсы IEnumerable и IEnumerator</li>
+					<li>Универсальные шаблоны</li>
+					<li>Итераторы</li>
+				</ul>
+
+				<h2>Коллекции</h2>
+				<p>
+					Во многих приложениях требуется создавать группы связанных объектов и управлять ими. Существует два
+					способа группировки объектов: создать массив объектов и создать коллекцию.
+				</p>
+				<p>
+					Коллекции предоставляют более гибкий способ работы с группами объектов. В отличие от массивов,
+					коллекция, с которой вы работаете, может расти или уменьшаться динамически при необходимости.
+					Некоторые коллекции допускают назначение ключа любому объекту, который добавляется в коллекцию,
+					чтобы в дальнейшем можно было быстро извлечь связанный с ключом объект из коллекции.
+				</p>
+				<p>
+					<strong>Примечание: </strong> Для работы с коллекиями подключите директивы using для пространств
+					имен
+					System.Collections.Generic и System.Linq.
+				</p>
+				<p>
+					<h2>Виды коллекций</h2>
+				</p>
+				<p>
+					<img class="img-fluid img-thumbnail" src="../img/collections.png" alt="Collections">
+				</p>
+				<p>
+					Многие типовые коллекции предоставляются платформой .NET. Каждый тип коллекции предназначен для
+					определенной цели.
+				</p>
+				<ul>
+					<li>Классы <a
+							href="https://docs.microsoft.com/ru-ru/dotnet/api/system.collections">System.Collections</a>
+					</li>
+					<li>Классы <a
+							href="https://docs.microsoft.com/ru-ru/dotnet/api/system.collections.concurrent">System.Collections.Generic</a>
+					</li>
+					<li>Классы <a
+							href="https://docs.microsoft.com/ru-ru/dotnet/api/system.collections.concurrent">System.Collections.Concurrent</a>
+					</li>
+				</ul>
+
+				<h2>Интерфейсы IEnumerable и IEnumerator</h2>
+				<p>
+					Основной для большинства коллекций является реализация интерфейсов IEnumerable и IEnumerator.
+					Благодаря такой реализации мы можем перебирать объекты в цикле foreach.
+				</p>
+
+				<div>
+					<pre class="prettyprint">
+						<code>
+foreach(var item in перечислимый_объект)
+{
+
+}</code>
+					</pre>
+				</div>
+
+				<p>
+					Интерфейс IEnumerable имеет метод, возвращающий ссылку на другой интерфейс - перечислитель.
+				</p>
+				<div>
+					<pre class="prettyprint">
+						<code>
+public interface IEnumerable
+{
+	IEnumerator GetEnumerator();
+}</code>
+					</pre>
+				</div>
+
+				<p>Интерфейс IEnumerator определяет функционал для перебора внутренних объектов в контейнере.</p>
+
+				<div>
+					<pre class="prettyprint">
+						<code>
+public interface IEnumerator
+{
+	bool MoveNext(); // перемещение на одну позицию вперед в контейнере элементов
+	object Current {get;}  // текущий элемент в контейнере
+	void Reset(); // перемещение в начало контейнера
+}</code>
+					</pre>
+				</div>
+
+
+				<h2>Универсальные шаблоны</h2>
+
+				<p>
+					Универсальные шаблоны позволяют точно настроить метод, класс, структуру или интерфейс в соответствии
+					с типом обрабатываемых данных. Например, вместо использования класса Hashtable , который позволяет
+					ключам и значениям быть любого типа, можно использовать универсальный класс
+					Dictionary&lt;TKey,TValue&gt;
+					и указать допустимый тип ключа и тип значения. Помимо прочего, преимуществами универсальных
+					шаблонов являются улучшенная возможность многократного использования кода и сохранения типов.
+				</p>
+				<p>
+					Универсальными шаблонами являются классы, структуры, интерфейсы и методы, которые имеют прототипы
+					(параметры типов) для одного или нескольких типов, которые они хранят или используют. Класс
+					универсальной коллекции может использовать параметр типа в качестве заполнителя для типа объектов,
+					которые в нем хранятся. Параметры типа отображаются как типы его полей и типы параметров его
+					методов. Универсальный метод может использовать параметр типа в качестве типа возвращаемого значения
+					или как тип одного из своих формальных параметров. Следующий код иллюстрирует определение простого
+					универсального класса.</p>
+
+				<h2>foreach</h2>
+
+				<p>Коллекции реализующие интерфейс IEnumerable/IEnumerable&lt;T&gt; поддерживают перебор в цикле
+					foreach.</p>
+
+				<h2>Итераторы</h2>
+
+				<p>
+					Итератор можно использовать для прохода по коллекции, такой как список или массив.
+				</p>
+				<p>
+					Метод итератора или метод доступа get выполняет настраиваемую итерацию по коллекции. Метод итератора
+					использует оператор <code>yield return</code> для поочередного возврата каждого элемента. При достижении
+					инструкции <code>yield return</code> текущее расположение в коде запоминается. При следующем вызове функции
+					итератора выполнение возобновляется с этого места.
+					Итератор используется из клиентского кода с помощью оператора foreach или с помощью запроса LINQ.
+				</p>
+				<p>
+					Типом возвращаемого метода итератора или метода доступа get может быть IEnumerable, IEnumerable&lt;T&gt;, IEnumerator или IEnumerator&lt;T&gt;.
+				</p>
+				<div>
+					<pre class="prettyprint">
+						<code>
+public static System.Collections.Generic.IEnumerable<int>
+	EvenSequence(int firstNumber, int lastNumber)
+{
+	// Вернуть все четные значения в промежутке.
+	for (int number = firstNumber; number &gt;= lastNumber; number++)
+	{
+		if (number % 2 == 0)
+		{
+			yield return number;
+		}
+	}
+}</code>
+					</pre>
+				</div>
+			</main>
+		</div>
+</body>
+
+</html>
