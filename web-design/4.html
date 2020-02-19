@@ -1,0 +1,396 @@
+﻿<!doctype html>
+<html>
+
+<head>
+	<link rel="stylesheet" href="../css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+	</script>
+
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<script src="../js/bootstrap.bundle.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+
+	<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+	<meta charset="utf-8">
+	<title>Введение в HTML</title>
+</head>
+
+<body>
+	<header>
+		<nav class="navbar navbar-dark static-top navbar-expand-md navbar-dark bg-dark shadow-md">
+			<a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">IT_CLUB</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04"
+				aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarsExample04">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Link</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false">Dropdown</a>
+						<div class="dropdown-menu" aria-labelledby="dropdown04">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+						</div>
+					</li>
+				</ul>
+				<form class="form-inline my-2 my-md-0">
+					<input class="form-control" type="text" placeholder="Search">
+				</form>
+			</div>
+		</nav>
+
+	</header>
+
+	<div class="container-fluid">
+		<div class="row">
+			<nav class="col-md-2 d-none d-md-block bg-light sidebar">
+				<div class="sidebar-sticky">
+					<ul class="nav flex-column">
+						<li class="nav-item">
+							<a class="nav-link" href="1.html">
+								<span data-feather="layers"></span>
+								1. Введение в HTML
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="2.html">
+								<span data-feather="home"></span>
+								2. Основные теги HTML
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="3.html">
+								<span data-feather="shopping-cart"></span>
+								3. Атрибут, ссылка, якорь, картинка<span class="sr-only">(current)</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link active" href="#">
+								<span data-feather="users"></span>
+								4. Списки и таблицы (основы)
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="5.html">
+								<span data-feather="bar-chart-2"></span>
+								5. Таблица и ее атрибуты
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="6.html">
+								<span data-feather="layers"></span>
+								6. HTML5 и семантика
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="7.html">
+								<span data-feather="layers"></span>
+								7. Основы CSS, базовые селекторы и комбинаторы
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="8-9.html">
+								<span data-feather="layers"></span>
+								8-9. Margin, padding, border
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="10.html">
+								<span data-feather="layers"></span>
+								10. Блочные и строчные элементы
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="11.html">
+								<span data-feather="layers"></span>
+								11. Позиционирование, float
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="12.htnl">
+								<span data-feather="layers"></span>
+								12. Форматирование текста и задание фона
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="13-14.html">
+								<span data-feather="layers"></span>
+								13-14. Создание своего сайта по шаблону
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="15.html">
+								<span data-feather="layers"></span>
+								15. HTML5-аудио, HTML5-видео
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="16.html">
+								<span data-feather="layers"></span>
+								16. Формы
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="17.html">
+								<span data-feather="layers"></span>
+								17. Селектор псевдокласса, CSS ссылки
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="18.html">
+								<span data-feather="layers"></span>
+								18. CSS таблицы
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="19.html">
+								<span data-feather="layers"></span>
+								19. CSS списки, CSS фон
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="20.html">
+								<span data-feather="layers"></span>
+								20. CSS градиент, CSS3 тень блока
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="21.html">
+								<span data-feather="layers"></span>
+								21. CSS3 переходы
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="22-23.html">
+								<span data-feather="layers"></span>
+								22-23. CSS3 трансформации
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="24-25.html">
+								<span data-feather="layers"></span>
+								24-25. CSS3 анимация
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="26-27.html">
+								<span data-feather="layers"></span>
+								26-27. Создание своего сайта по заданному шаблону
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="28-29.html">
+								<span data-feather="layers"></span>
+								28-29. Flexbox
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="30-31.html">
+								<span data-feather="layers"></span>
+								30-31. Grid
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="32-36.html">
+								<span data-feather="layers"></span>
+								32-36. Создание сайтов
+							</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+
+			<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+				<h3>План занятия: </h3>
+				<ul>
+					<li>Списки и их виды</li>
+					<li>Маркированный список</li>
+					<li>Нумерованный список</li>
+					<li>Список определений</li>
+					<li>Таблицы (основы)</li>
+					<li>Практическое задание</li>
+				</ul>
+
+				<h2>Списки и их виды</h2>
+				<p>
+					Списки используются для группировки связанных между собой фрагментов информации. Существует три вида
+					списков:
+				</p>
+				<ul>
+					<li><b>маркированный список</b> - &lt;ul> - каждый элемент списка &lt;li> отмечается маркером.</li>
+					<li><b>нумерованный список</b> - &lt;ol> - каждый элемент списка &lt;li> отмечается цифрой.</li>
+					<li><b>список определений</b> - &lt;dl> - состоит из пар термин &lt;dt> - &lt;dd> определение.</li>
+				</ul>
+				<p>
+					Каждый список представляет собой контейнер, внутри которого располагаются элементы списка или пары
+					термин-определение.
+					Элементы списка располагаются друг под другом и занимают всю ширину блока-контейнера. Каждый элемент
+					списка имеет дополнительный блок,
+					расположенный сбоку.
+				</p>
+
+				<h2>Маркированный список</h2>
+				<p>
+					Маркированный список представляет собой неупорядоченный список (от англ. Unordered List). Создаётся
+					с помощью парного тега &lt;ul>...&lt;/ul>.
+					В качестве маркера элемента списка выступает метка, по умолчанию это закрашенный кружок.
+				</p>
+
+				<p>
+					Каждый элемент списка создаётся с помощью парного тега &lt;li>...&lt;/li> (от англ. List Item).
+				</p>
+				<pre>
+					<code class="prettyprint">
+						&lt;ul>
+						    &lt;li>Microsoft&lt;/li>
+						    &lt;li>Google&lt;/li>
+						    &lt;li>Apple&lt;/li>
+						&lt;/ul>
+					</code>
+				</pre>
+				Результат: <br>
+				&emsp;<img src="img/4.0.png" width="230px">
+
+				<h2>Нумерованный список</h2>
+				<p>
+					Нумерованный список создаётся с помощью парного тега &lt;ol>...&lt;/ol>.
+					Каждый пункт списка также создаётся с помощью элемента &lt;li>.
+					Браузер нумерует элементы по порядку автоматически и если удалить один или несколько элементов
+					такого списка,
+					то остальные номера будут автоматически пересчитаны.
+				</p>
+				<p>
+					Для тега &lt;ol> доступны следующие атрибуты:
+				</p>
+				<p>
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>Атрибут</th>
+								<th>Описание</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>reversed</td>
+								<td>атрибут reversed задает отображение списка в обратном порядке (например, 9, 8,
+									7...).</td>
+							</tr>
+							<tr>
+								<td>start</td>
+								<td>атрибут start задает начальное значение, от которого пойдет отсчет нумерации,
+									например, конструкция &lt;ol start="10"> первому пункту присвоит порядковый номер
+									«10».</td>
+							</tr>
+							<tr>
+								<td>type</td>
+								<td>Атрибут type задает вид маркера для использования в списке (в виде букв или цифр).
+									Принимаемые значения:<br>
+									1 — значение по умолчанию, десятичная нумерация.<br>
+									A — нумерация списка в алфавитном порядке, заглавные буквы (A, B, C, D).<br>
+									a — нумерация списка в алфавитном порядке, строчные буквы (a, b, c, d).<br>
+									I — нумерация римскими заглавными цифрами (I, II, III, IV).<br>
+									i — нумерация римскими строчными цифрами (i, ii, iii, iv). </td>
+							</tr>
+						</tbody>
+					</table>
+				</p>
+				<pre>
+					<code class="prettyprint">
+						&lt;ol>
+						    &lt;li>Microsoft&lt;/li>
+						    &lt;li>Google&lt;/li>
+						    &lt;li>Apple&lt;/li>
+						&lt;/ol>
+					</code>
+				</pre>
+				Результат: <br>
+				&emsp;<img src="img/4.1.png" width="220px">
+
+				<h2>Список определений</h2>
+				<p>
+					Списки определений создаются с помощью тега &lt;dl>...&lt;/dl>. Для добавления термина применяется
+					тег &lt;dt>...&lt;/dt>,
+					а для вставки определения — тег &lt;dd>...&lt;/dd>.
+				</p>
+				<pre>
+					<code class="prettyprint">
+						&lt;dl>
+						    &lt;dt>Режиссеры:&lt;/dt>
+						        &lt;dd>Энтони Руссо&lt;/dd>
+						        &lt;dd>Джо Руссо&lt;/dd>
+						    &lt;dt>В ролях:&lt;/dt>
+						        &lt;dd>Роберт Дауни мл.&lt;/dd>
+						        &lt;dd>Крис Эванс&lt;/dd>
+						        &lt;dd>Крис Хемсворт&lt;/dd>
+						        &lt;dd>Скарлетт Йоханссон&lt;/dd>
+						&lt;/dl>
+					</code>
+				</pre>
+				Результат: <br>
+				&emsp;<img src="img/4.2.png" width="440px">
+
+				<h2>Таблицы (основы)</h2>
+				<p>
+					Таблицы упорядочивают и выводят на экран данные с помощью строк или столбцов.
+					Таблицы состоят из ячеек, образующихся при пересечении строк и столбцов.
+					Ячейки таблиц могут содержать любые HTML-элементы, такие как заголовки, списки,
+					текст, изображения, элементы форм, а также другие таблицы. Каждой таблице можно
+					добавить связанный с ней заголовок, расположив его перед таблицей или после неё.
+				</p>
+
+				<p>
+					Таблица создаётся при помощи парного тега &lt;table>...&lt;/table>.
+					Данный тег является контейнером для элементов таблицы и все элементы должны находиться внутри него.
+				</p>
+
+				<p>
+					Тег &lt;caption> используется для создания заголовка таблицы.<br>
+					Тег &lt;tr> создает строку таблицы, а тег &lt;td> и &lt;th> - ячейку.
+				</p>
+
+				<p>
+					Пример таблицы с двумя строками и тремя столбцами:
+				</p>
+				<pre>
+					<code class="prettyprint">
+						&lt;table>
+						    &lt;tr>
+						        &lt;td>Собачки&lt;/td>
+							&lt;td>Котики&lt;/td>
+							&lt;td>Хомячки&lt;/td>
+						    &lt;/tr>
+						    &lt;tr>
+						        &lt;td>Попугаи&lt;/td>
+						        &lt;td>Белочки&lt;/td>
+						        &lt;td>Поросята&lt;/td>
+						    &lt;/tr>
+						&lt;/table>
+					</code>
+				</pre>
+
+				<h2>Практическое задание</h2>
+				<p>
+					Создать страничку с заголовком и таблицей.<br>
+					Внутри таблицы создать 3 вида списков, а таблице задать заголовок.
+				</p>
+			</main>
+		</div>
+</body>
+
+</html>
