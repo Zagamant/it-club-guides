@@ -1,0 +1,273 @@
+<!doctype html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+    <meta charset="utf-8">
+    <title>Введение в язык</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-dark static-top navbar-expand-md navbar-dark bg-dark shadow-md">
+            <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">IT_CLUB</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04"
+                aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarsExample04">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">.NET <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">С#</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Unity</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Си</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">С++</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Web</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../graphics/1.html">Графика</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Пользователь ПК</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown04">
+                            <a class="dropdown-item" href="#">Lego</a>
+                            <a class="dropdown-item" href="#">Робототехника</a>
+                            <a class="dropdown-item" href="#">Польский))</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+    </header>
+
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                <div class="sidebar-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link " href="#">
+                                Введение в язык
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">
+                                Использование контроля версий в проектах (git)
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                Классы, объекты и работа с ними
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                Методы
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                Unit-тестирование
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                ООП
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                Делегаты, лямбды и события
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./8_collections_generics.html">
+                                Коллекции и универсальные шаблоны(generics)
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                LINQ
+                            </a>
+                        </li>
+                    </ul>
+
+                    <h6
+                        class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                        <span>Дополнительные темы(необязательные)</span>
+                        <a class="d-flex align-items-center text-muted" href="#">
+                            <span data-feather="plus-circle"></span>
+                        </a>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span data-feather="file-text"></span>
+                                Current month
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span data-feather="file-text"></span>
+                                Last quarter
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span data-feather="file-text"></span>
+                                Social engagement
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span data-feather="file-text"></span>
+                                Year-end sale
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                <h3>План занятия: </h3>
+                <ul>
+                    <li>Начало работы с git</li>
+                    <li>Основы Git</li>
+                    <li>Ветвление</li>
+                    <li>Github</li>
+                    <li>Введение в .NET Framework и .NET Core</li>
+                    <li>Комментарии в коде</li>
+                </ul>
+
+                <h2>Начало работы с git</h2>
+                <p>
+                    Git - одна из систем управлений версий и по совместительству самая рапространенная в мире.
+                    Система управления версиями записывает историю изменения файла или набора файлов, чтобы была
+                    возможность вернуться к конкретной версии.
+                    Система контроля версий работает с любыми файлами.
+                </p>
+                <p>
+                    Главным отличием Git от других систем контроля версия - это отличительное воприятия git'ом данных.
+                    Большинство ситсем хранит информацию в виде списка изменений, связанных с файлами.
+                    Git же не воспринимает и не храний файлы подобныйм способом.
+                    В ее восприятии данные представляют собой набор снимков состояния миниатюрной файловой
+                    системы(нашего каталога).
+                </p>
+                <p>
+                    В git перед сохранения вычисляется контрольная сумма по которой далее и будут искаться файлы.
+                    Таким образом изменить содержимое файла без ведома git или же повредить файл, не удастся.
+                    Git сохраняет в базу не по именам файлы, а контрольные хеш-значения.
+                </p>
+                <h4>Три состояния</h4>
+                <p>
+                    Файлы в git могут находится только в одном из 3 состояний: committed, modified или staged.
+                </p>
+                <ol>
+                    <li>Committed - состояние означающие что данные сохранены в локальной базе.</li>
+                    <li>Modified - состояние означающие что в файлы были внесены изменения.</li>
+                    <li>Staged - состояние помечающее текущую версию модифицированного файла как предназначенную для
+                        загрузки на сервер.</li>
+                </ol>
+                <p>
+                    <img src="./img/git.png" alt="Три состояния git файлов">
+                </p>
+
+                <h4>Установка git</h4>
+                <p>
+                    Прежде чем использовать Git, требуется установить его на своём компьютере. Можно установить
+                    Git из собранного пакета или другого установщика, либо скачать исходный код и скомпилировать его
+                    самостоятельно.
+                </p>
+                <h5>
+                    Установка на Mac
+                </h5>
+                <p>
+                    Существует несколько способов установки Git на Mac. Самый простой — установить Xcode Command Line
+                    Tools. В версии Mavericks (10.9) и выше вы можете добиться этого просто первый раз выполнив git в
+                    терминале.
+                </p>
+                <p><code>$ git --version</code></p>
+
+                <p>
+                    Если Git не установлен, вам будет предложено его установить.
+
+                    Если Вы хотите получить более актуальную версию, то можете воспользоваться бинарным установщиком.
+                    Установщик Git для OS X доступен для скачивания с сайта Git <a
+                        href="http://git-scm.com/download/mac">http://git-scm.com/download/mac</a>.
+                </p>
+                <h5>
+                    Установка на Windows
+                </h5>
+                <p>
+                    Для установки Git в Windows также имеется несколько способов. Официальная сборка доступна для
+                    скачивания на официальном сайте Git. Просто перейдите на страницу <a
+                        href="http://git-scm.com/download/win">http://git-scm.com/download/win</a>, и
+                    загрузка запустится автоматически.
+                </p>
+                <p>
+                    Другой простой способ установки Git — установить GitHub для Windows. Его установщик включает в себя
+                    утилиты командной строки и GUI Git. Он также корректно работает с Powershell, обеспечивает надёжное
+                    сохранение учётных данных и правильные настройки CRLF. Вы познакомитесь с этими вещами подробнее
+                    несколько позже, здесь же отметим, что они будут вам необходимы. Вы можете загрузить GitHub для
+                    Windows с вебсайта <a href="http://windows.github.com/">GitHub Desktop</a>.
+                </p>
+
+                <h2>Основы Git</h2>
+                <p>
+
+                </p>
+
+
+                <h2>
+                    Домашнее задание
+                </h2>
+                <p>Загрузить Д/З из прошлого урока в свой репозиторий на github</p>
+                <p></p>
+                <h3>Ссылки: </h3>
+                <ul>
+                    <li>
+                        <a href="https://learngitbranching.js.org/">Ветвление git на практике</a> </li>
+                    <li>
+                        <a href="https://git-scm.com/book/ru/v2">
+                            Документация git</a>
+                    </li>
+                    <li>
+                        <a href="https://githowto.com/ru">Интерактивный учебник по git</a>
+                    </li>
+                    <li>
+                        <a href="https://education.github.com/git-cheat-sheet-education.pdf">Шпаргалка</a>
+                    </li>
+                </ul>
+            </main>
+        </div>
+</body>
+
+</html>
