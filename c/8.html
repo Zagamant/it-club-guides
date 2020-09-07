@@ -1,0 +1,789 @@
+<!doctype html>
+<html>
+
+<head>
+	<link rel="stylesheet" href="./css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+	</script>
+
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+	<script src="../js/bootstrap.bundle.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+
+	<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+	<meta charset="utf-8">
+	<title>Введение в циклы</title>
+</head>
+
+<body>
+	<header>
+		<nav class="navbar navbar-dark static-top navbar-expand-md navbar-dark bg-dark shadow-md">
+			<a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">IT_CLUB</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04"
+				aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarsExample04">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Link</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false">Dropdown</a>
+						<div class="dropdown-menu" aria-labelledby="dropdown04">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+						</div>
+					</li>
+				</ul>
+				<form class="form-inline my-2 my-md-0">
+					<input class="form-control" type="text" placeholder="Search">
+				</form>
+			</div>
+		</nav>
+
+	</header>
+
+	<div class="container-fluid">
+		<div class="row">
+			<nav class="col-md-2 d-none d-md-block bg-light sidebar">
+				<div class="sidebar-sticky">
+					<ul class="nav flex-column">
+						<li class="nav-item">
+							<a class="nav-link active" href="#">
+								<span data-feather="home"></span>
+								Введение в язык <span class="sr-only">(current)</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Типы данных. Вывод и форматирование данных
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="shopping-cart"></span>
+								Products
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="users"></span>
+								Customers
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="bar-chart-2"></span>
+								Reports
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="layers"></span>
+								Integrations
+							</a>
+						</li>
+					</ul>
+
+					<h6
+						class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+						<span>Saved reports</span>
+						<a class="d-flex align-items-center text-muted" href="#">
+							<span data-feather="plus-circle"></span>
+						</a>
+					</h6>
+					<ul class="nav flex-column mb-2">
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Current month
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Last quarter
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Social engagement
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Year-end sale
+							</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+
+			<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+			<h2>План занятия:	</h2>
+		<ul>
+			<li>Понятия цикла с предусловием и постусловием.</li>
+			<li>Циклы while и do-while.</li>
+			<li>Бесконечные циклы - проблемы и способы использования.</li>
+			<li>Практикум.</li>		
+		</ul>
+		
+		<h2>Понятия цикла с предусловием и постусловием.</h2>
+		<p>В жизни мы часто сталкиваемся с действиями которые повторяются много раз. Например, каждый вечер мы ложимся спать или каждое утро мы просыпаемся и завтракаем. В программировании также возникает необходимость повторять каки-то действоия много раз. Для решения этой задачи были придуманы циклы.</p>
+		<p><b>Цикл</b> - это часть программы, которая повторяется необходимоое количество раз.</p>
+		<p>Существует две разновидности циклов: с предусловием и постусловием. <br>В цикле с предусловием, сначала проверяется условие и если оно верно, то выполняются действия. В цикле с постусловием, сначала выполняются действия, а затем проверяется условие. <br>Главное отличие этих циклов: <b>цикл с постусловием выполнится хотя бы один раз, цикл с предусловием может ни разу не выполниться.</b></p>
+		
+		<h2>Циклы while и do-while.</h2>
+		
+		<p>В таблице показан принцип работы этих операторов</p>
+	
+		<p>
+			<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>название</th>
+								<th>while(пока, оператор с предусловием)</th>
+								<th>do-while(делать-пока, оператор с постусловием)</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>блок-схема</td>
+								<td><img src="img/img8_1.jpg"  width="342" height="300"></td>
+								<td><img src="img/img8_2.jpg"  width="342" height="300"></td>
+							</tr>
+									<tr>
+								<td>общий вид</td>
+								<td><pre class="prettyprint">
+						<code>
+	while(условие)
+	{
+		операторы;
+	}
+						</code>
+		</pre></td>
+								<td><pre class="prettyprint">
+						<code>
+	do
+	{
+		операторы;
+	}while(условие);
+						</code>
+		</pre></td>
+							</tr>
+							
+							<tr>
+								<td>принцип работы</td>
+								<td><b>сначала проверяется условие, если условие верно, то выполняются операторы и снова проверяется условие и т.д. пока условие не нарушится</b></td>
+								<td><b>сначала выполняются операторы, затем проверяется условие, если условие верно, то снова выполняются операторы и т.д. пока условие не нарушится</b></td>
+							</tr>
+							<td>пример:<br>вывод чисел от 1 до 10</td>
+								<td><pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;locale.h&gt;
+int main()
+{
+	int x=1;
+	while(x <= 10)
+	{
+		printf("%d ",x);
+		x++;
+	}
+	return 0;
+}
+						</code>
+		</pre></td>
+								<td><pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;locale.h&gt;
+int main()
+{
+	int x=1;
+	do
+	{
+		printf("%d ",x);
+		x++;
+	}while(x <= 10);
+	return 0;
+}
+						</code>
+		</pre></td>
+							</tr>
+						</tbody>
+					</table>
+		</p>
+		<p>Как видно из таблицы цикл while от цикла do-while отличается только расположением условия. Цикл do-while выполнится хотя бы один раз, цикл do-while может ни разу не выполнится, если изначально условие окажется не верныым. Циклы взаимозаменяемы, т.е. всегда один цикл можно заменить на другой, но в разных ситуациях удобно использовать разные циклы.</p>
+		
+		<h2>Бесконечные циклы - проблемы и способы использования.</h2>
+		<p><b>Бесконечный цикл</b> — цикл, написанный таким образом, что условие выхода из него никогда не выполняется. О программе, вошедшей в бесконечный цикл, иногда говорят, что она <b>зациклилась</b></p>
+
+
+		<p>Самый простой вариант создания бесконечного цикла написать в условии true.<br> Программа бесконечно выводит "привет".</p>
+
+		<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;locale.h&gt;
+int main()
+{
+	setlocale(LC_ALL,"Russian");
+	while(true)
+	{
+		printf("привет");
+	}
+	return 0;
+}
+						</code>
+		</pre>
+
+<p>Эта же задача выполнена с помощью цикла do-while</p>
+		<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;locale.h&gt;
+int main()
+{
+	setlocale(LC_ALL,"Russian");
+	do
+	{
+		printf("привет");
+	}while(true)
+	return 0;
+}
+						</code>
+		</pre>
+
+		<p>Бесконечный цикл опасен - он может привести к зависанию компьютера. Если используется конструкция с бесконечным циклом всегда нужно предусмотреть какое-то условие для выхода из этого цикла.</p>
+		<p>Оператор <b>break</b> используется для принудительной остановки цикла. (Можно использовать для любого цикла)</p>
+
+		<p><b>Программа считает сумму всех вводимых чисел пока не будет введен 0.</b></p>
+
+		<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;locale.h&gt;
+int main()
+{
+	setlocale(LC_ALL,"Russian");
+	int n, sum=0;
+	
+	while(true)
+	{	
+		printf("введите чило: ");
+		scanf("%d", &n);
+		if(n == 0)
+		{
+			break; //принудительная остановка цикла
+		}
+		sum+=n;
+	}
+	printf("сумма всех введенных чисел = %d", sum);
+	return 0;
+}
+						</code>
+		</pre>
+
+		<h2>Задачи</h2>
+		<ul>
+			<li>Вывести слово привет 10 раз.</li>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample1"
+						aria-expanded="false" aria-controls="collapseExample">
+						Решение
+					</button>
+				</p>
+				<div class="collapse" id="collapseExample1">
+					<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;locale.h&gt;
+int main()
+{
+	setlocale(LC_ALL,"Russian");
+	int i=0;
+	
+	while(i&lt;10)
+	{	
+		printf("привет\n");
+		i++;
+	}
+	return 0;
+}
+						</code>
+					</pre>
+				</div>
+<li>Вывод чисел от 1 до 100.</li>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample2"
+						aria-expanded="false" aria-controls="collapseExample">
+						Решение
+					</button>
+				</p>
+				<div class="collapse" id="collapseExample2">
+					<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+int main()
+{
+	int i = 1;
+	while(i&lt;100)
+	{
+		printf("%d\n",i);
+		i++;
+	}
+	return 0;
+}
+						</code>
+					</pre>
+				</div>
+<li>Вывести числа от a до b и наоборот.</li>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample3"
+						aria-expanded="false" aria-controls="collapseExample">
+						Решение
+					</button>
+				</p>
+				<div class="collapse" id="collapseExample3">
+					<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;locale.h&gt;
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	int a,b,i;
+	printf("Введите два числа: ");
+	scanf("%d%d",&a,&b);
+	i=a;
+	while(i<=b)
+	{
+		printf("%d\n",i);
+		i++;
+	}
+	printf("------------------------------");
+	i=b;
+	while(i>=a)
+	{
+		printf("%d\n",i);
+		i--;
+	}
+
+	return 0;
+}
+						</code>
+					</pre>
+				</div>				
+<li>Вывести нечетные числа от a до b.</li>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample4"
+						aria-expanded="false" aria-controls="collapseExample">
+						Решение
+					</button>
+				</p>
+				<div class="collapse" id="collapseExample4">
+					<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;locale.h&gt;
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	int a,b,i;
+	printf("Введите два числа: ");
+	scanf("%d%d",&a,&b);
+	i=a;
+	while(i<=b)
+	{
+		if(i%2==1)
+		{
+			printf("%d\n",i);
+		}
+		i++;
+	}
+	return 0;
+}
+						</code>
+					</pre>
+				</div>	
+<li>Найти сумму чисел от 1 до 100.</li>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample5"
+						aria-expanded="false" aria-controls="collapseExample">
+						Решение
+					</button>
+				</p>
+				<div class="collapse" id="collapseExample5">
+					<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+int main()
+{
+	int i=1, sum = 0;
+	while(i<=100)
+	{
+		sum = sum+i;
+		i++;
+	}
+	printf("%d\n",sum);
+	return 0;
+}
+						</code>
+					</pre>
+				</div>
+<li>Вывести числа от 15 до 29.</li>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample6"
+						aria-expanded="false" aria-controls="collapseExample">
+						Решение
+					</button>
+				</p>
+				<div class="collapse" id="collapseExample6">
+					<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+int main()
+{
+	int i=15;
+	while (i&lt;30)
+	{
+		printf("%d\n",i);
+		i++;
+	}
+	return 0;
+}
+						</code>
+					</pre>
+				</div>		
+<li>Вывести числа от 1 до 100 с шагом 0.5 (шаг - i=i+0.5).</li>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample7"
+						aria-expanded="false" aria-controls="collapseExample">
+						Решение
+					</button>
+				</p>
+				<div class="collapse" id="collapseExample7">
+					<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+int main()
+{
+	float i=1;
+	while (i<=100)
+	{
+		printf("%f\n",i);
+		i=i+0.5;
+	}
+	return 0;
+}
+						</code>
+					</pre>
+				</div>
+<li>Вывести таблицу умножения на 7.</li>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample8"
+						aria-expanded="false" aria-controls="collapseExample">
+						Решение
+					</button>
+				</p>
+				<div class="collapse" id="collapseExample8">
+					<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+int main()
+{
+	int i=1;
+	while (i&lt;10)
+	{
+		printf("%d * 7 = %d\n",i,i*7);
+		i++;
+	}
+	return 0;
+}
+						</code>
+					</pre>
+				</div>		
+<li>Ввести числа a,b,c. Вывести числа от наименьшего к наибольшему между a и b, использовать шаг c.</li>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample9"
+						aria-expanded="false" aria-controls="collapseExample">
+						Решение
+					</button>
+				</p>
+				<div class="collapse" id="collapseExample9">
+					<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	int a,b,c,i;
+	printf("Введите три числа: ");
+	scanf("%d%d%d",&a,&b,&c);
+	i=1;
+	while(i<=b)
+	{
+		printf("%d\n",i);
+		i=i+c;
+	}
+	return 0;
+}
+						</code>
+					</pre>
+				</div>	
+<li>Ввести число, найти сумму его цифр.</li>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample10"
+						aria-expanded="false" aria-controls="collapseExample">
+						Решение
+					</button>
+				</p>
+				<div class="collapse" id="collapseExample10">
+					<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;locale.h&gt;
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	int n,sum =0;
+	printf("Введите число: ");
+	scanf("%d",&n);
+	while(n!=0)
+	{
+		sum = sum+ n%10;
+		n = n/10;
+	}
+	printf("Sum = %d\n",sum);
+	return 0;
+}
+						</code>
+					</pre>
+				</div>
+<li>Ввести число, вывести все его делители.</li>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample11"
+						aria-expanded="false" aria-controls="collapseExample">
+						Решение
+					</button>
+				</p>
+				<div class="collapse" id="collapseExample11">
+					<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;locale.h&gt;
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	int n,i;
+	printf("Введите число: ");
+	while(i<=n)
+	{
+		if(n%i==0)
+		{
+			printf("%d - delitel!\n",i);
+		}
+		i++;
+	}
+	return 0;
+}
+						</code>
+					</pre>
+				</div>
+<li>Ввести число, определить является ли оно простым или составным.</li>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample12"
+						aria-expanded="false" aria-controls="collapseExample">
+						Решение
+					</button>
+				</p>
+				<div class="collapse" id="collapseExample12">
+					<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;locale.h&gt;
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	int n,i;
+	printf("Введите число: ");
+	int count = 0;
+	while(i<=n)
+	{
+		if(n%i==0)
+		{
+			printf("%d - делитель\n",i);
+			count++;
+		}
+		i++;
+	}
+	if(count==2)
+	{
+		printf("%d - простое\n",n);
+	}
+	else
+	{
+		printf("%d - составное\n",n);
+	}
+
+	return 0;
+}
+						</code>
+					</pre>
+				</div>		
+<li>Вывести всю таблицу умножения.</li>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample13"
+						aria-expanded="false" aria-controls="collapseExample">
+						Решение
+					</button>
+				</p>
+				<div class="collapse" id="collapseExample13">
+					<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;locale.h&gt;
+int main()
+{
+	int i=1, j=1;
+	while(i&lt;10)
+	{
+		j=1;
+		while(j&lt;10)
+		{
+			printf("%d * %d = %d\n",i,j,i*j);
+			j++;
+		}
+		i++;
+	}
+	return 0;
+}
+						</code>
+					</pre>
+				</div>
+<li>Сгенерировать 10 случайных чисел.</li>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample14"
+						aria-expanded="false" aria-controls="collapseExample">
+						Решение
+					</button>
+				</p>
+				<div class="collapse" id="collapseExample14">
+					<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;locale.h&gt;
+#include &lt;stdlib.h&gt; // библиотека стандартных функций
+#include &lt;time.h&gt; //библиотека работы со временем
+int main()
+{
+	//псевдослучайная последовательность
+	//генератору случайных чисел нужно давать входные данные, иначе будет одна и та же последовательность
+	int i=1;
+	while(i&lt;10)
+	{
+		int n = rand(); //rand - функция, которая генерирует число от 0 до 3200 с мелочью
+		printf("%d\n",n);
+		i++;
+	}
+	//будет генерироваться одна и та же последовательность чисел 
+	return 0;
+}
+						</code>
+					</pre>
+										<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;locale.h&gt;
+#include &lt;stdlib.h&gt; // библиотека стандартных функций
+#include &lt;time.h&gt; //библиотека работы со временем
+int main()
+{
+	srand(time(NULL));//мы даем генератору случайных чисел начальные значения в виде текущего времени
+	int i=1;
+	while(i&lt;10)
+	{
+		int n = rand();
+		printf("%d\n",n);
+		i++;
+	}
+	//чтобы генерировать числа в неком диапазоне, запомнить!
+	printf("------------------------------\n");
+	//генерация от 0 до max - rand()%max;
+	//пример - генерация от 0 до 131
+	i=1;
+	while(i&lt;10)
+	{
+		int n = rand()%131;
+		printf("%d\n",n);
+		i++;
+	}
+	printf("------------------------------\n");
+	//генерация от min до max 
+	// min + rand() % (max-min);
+	//пример - генерация от 5 до 15
+	i=1;
+	while(i&lt;10)
+	{
+		int n = 5 + rand()%(15-5);
+		printf("%d\n",n);
+		i++;
+	}
+	// min + rand() % (max-min);
+	//пример - генерация от min до max c клавиатуры
+	i=1;
+	int min, max;
+	scanf("%d%d",&min,&max);
+	while(i&lt;10)
+	{
+		int n = min + rand()%(max-min);
+		printf("%d\n",n);
+		i++;
+	}
+	return 0;
+}
+						</code>
+					</pre>
+				</div>															
+		</ul>
+			</main>
+	
+</body>
+
+</html>

@@ -1,0 +1,512 @@
+<!doctype html>
+<html>
+
+<head>
+	<link rel="stylesheet" href="./css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+	</script>
+
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+	<script src="../js/bootstrap.bundle.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+
+	<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+	<meta charset="utf-8">
+	<title>Массивы</title>
+</head>
+
+<body>
+	<header>
+		<nav class="navbar navbar-dark static-top navbar-expand-md navbar-dark bg-dark shadow-md">
+			<a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">IT_CLUB</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04"
+				aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarsExample04">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Link</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false">Dropdown</a>
+						<div class="dropdown-menu" aria-labelledby="dropdown04">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+						</div>
+					</li>
+				</ul>
+				<form class="form-inline my-2 my-md-0">
+					<input class="form-control" type="text" placeholder="Search">
+				</form>
+			</div>
+		</nav>
+
+	</header>
+
+	<div class="container-fluid">
+		<div class="row">
+			<nav class="col-md-2 d-none d-md-block bg-light sidebar">
+				<div class="sidebar-sticky">
+					<ul class="nav flex-column">
+						<li class="nav-item">
+							<a class="nav-link active" href="#">
+								<span data-feather="home"></span>
+								Введение в язык <span class="sr-only">(current)</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Типы данных. Вывод и форматирование данных
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="shopping-cart"></span>
+								Products
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="users"></span>
+								Customers
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="bar-chart-2"></span>
+								Reports
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="layers"></span>
+								Integrations
+							</a>
+						</li>
+					</ul>
+
+					<h6
+						class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+						<span>Saved reports</span>
+						<a class="d-flex align-items-center text-muted" href="#">
+							<span data-feather="plus-circle"></span>
+						</a>
+					</h6>
+					<ul class="nav flex-column mb-2">
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Current month
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Last quarter
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Social engagement
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Year-end sale
+							</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+
+			<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+			<h2>План занятия:	</h2>
+		<ul>
+			<li>Введение в массивы. Создание массивов.</li>
+			<li>Ввод, вывод массивов.</li>
+			<li>Решение частых задач с массивами - поиск элементов, обработка данных, изменение элементов массивов.</li>
+			<li>Практикум.</li>		
+		</ul>
+		
+		<h2>Введение в массивы. Создание массивов.</h2>
+		<p><b>Массив</b> - это совокупность переменных одного типа, к которым обращаются с помощью общего имени. Доступ к отдельному элементу массива может осуществляться с помощью индекса. Нумерация элементов в массиве начинается с 0. В Си все массивы состоят из соприкасающихся участков памяти. Наименьший адрес соответствует первому элементу, наибольший - последнему элементу. Массивы могут иметь одну или несколько размерностей.</p>
+		
+		<h3>Создание массива</h3>
+		<p>Стандартный вид объявления одномерного массива следующий:</p>
+<pre class="prettyprint">
+						<code>
+тип имя_переменной [размер];
+						</code>
+	</pre>
+
+<p>В Си массивы должны определяться однозначно, чтобы компилятор мог выделить для них место в памяти. Здесь тип объявляет базовый тип массива и является типом каждого элемента массива. Параметр размер определяет, сколько элементов содержит массив.
+</p> 
+<p>У всех массивов первый элемент имеет индекс 0. Поэтому, если написать</p>
+<pre class="prettyprint">
+						<code>
+int mas [10];
+						</code>
+	</pre>
+
+<p>то будет объявлен массив символов из 10 элементов, причем эти элементы адресуются индексом от 0 до 9.</p>
+
+<img src="img/img10_1.jpg"  width="599" height="248">
+
+
+<p>В Си размер массива может быть только константой. </p>
+<p><b>Константа - </b>переменная значение которой задается один раз и никогда не меняется. (Например число PI в математике).</p>
+<pre class="prettyprint">
+						<code>
+const int n = 10;
+int mas[n]; 
+</code>
+	</pre>
+
+<h2>Ввод, вывод массивов.</h2>
+ <p>Следующая программа заполняет целочисленный массив числами от 0 до 9 и выводит его:</p>
+ <pre class="prettyprint">
+						<code>
+#include &lt;stdio.h&gt;
+int main()
+{
+	const int n = 10; //размер массива хранится в константе
+	int mas[n]; // резервирует место для 10 целочисленных элементов
+	//заполнение массива 
+	for (int i = 0; i < n; i++)
+	{
+		mas[i]=i;
+	}
+	//вывод массива в прямом порядке
+	for (int i = 0; i < n; i++)
+	{
+		printf("%d\t", mas[i]);
+	}
+	printf("\n");
+	//вывод массива в обратном порядке
+	for (int i = n-1; i >= 0; i--)
+	{
+		printf("%d\t", mas[i]);
+	}
+}
+
+</code>
+	</pre>
+
+	<p>Заполнение массива числами введенными с клавиатуры и вывод.</p>
+ <pre class="prettyprint">
+						<code>
+#include &lt;stdio.h&gt;
+int main()
+{
+	const int n = 10;
+	int mas[n];  
+	//заполнение массива
+	for (int i = 0; i < n; i++)
+	{
+		scanf("%d", &mas[i]);
+	}
+	//вывод массива
+	for (int i = 0; i < n; i++)
+	{
+		printf("%d\t", mas[i]);
+	}
+}
+
+</code>
+	</pre>
+
+<p><b>Запомнить!!!</b></p>
+ <pre class="prettyprint">
+						<code>
+const int n=10; 		//размер массива 
+int mas[n];     		//объявление массива
+for (int i = 0; i < n; i++) 	//цикл перебирающий все элементы массива с нулевого до последнего
+n-1 				//номер последнего элемента массива
+mas 				//весь массив, нельзя указать название массива без номера элемента при вводе/выводе
+i    				//индекс - номер элемента массива, меняется от 0 до n-1
+mas[i]				//элемент массива с номером i
+	</code>
+	</pre>
+						
+<h2>Решение частых задач с массивами - поиск элементов, обработка данных, изменение элементов массивов.</h2>
+
+	
+		<p>Рассмотрим несколько примеров по работе с массивами.</p>
+		<p>Ввести массив и вывести нечетные элементы массива.</p>
+	<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+int main()
+{
+	const int  n = 10;
+	int array[n];
+	for (int i = 0; i < n; i++) 
+	{
+		printf("array[%d] = ", i);
+		scanf("%d", &array[i]);
+	}
+	for (int i = 0; i < n; i++)
+	{
+		if (array[i] % 2 == 1)
+		{
+			printf("array[%d] = %d\n", i, array[i]);
+		}
+	}
+	return 0;
+}
+						</code>
+		</pre>
+
+		<p>Ввести массив и вывести элементы массива с нечетными индексами.</p>
+	<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+int main()
+{
+	const int  n = 10;
+	int array[n];
+	for (int i = 0; i < n; i++) 
+	{
+		printf("array[%d] = ", i);
+		scanf("%d", &array[i]);
+	}
+	for (int i = 0; i < n; i++)
+	{
+		if (i % 2 == 1)
+		{
+			printf("array[%d] = %d\n", i, array[i]);
+		}
+	}
+	return 0;
+}
+						</code>
+		</pre>
+
+
+		<p>Ввести массив и найти сумму элементов массива.</p>
+	<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+int main()
+{
+	const int  n = 10;
+	int array[n];
+	int sum=0;
+	for (int i = 0; i < n; i++) 
+	{
+		printf("array[%d] = ", i);
+		scanf("%d", &array[i]);
+	}
+	for (int i = 0; i < n; i++)
+	{
+		sum = sum + array[i];		{			
+	}
+	printf("sum = %d\n", sum);
+	return 0;
+}
+						</code>
+		</pre>
+
+		<h2>Задачи</h2>
+		<ul>
+			<li>Найдите сумму элементов массива между двумя первыми нулями. Если двух нулей нет в массиве, то выведите ноль.
+			</li>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample1"
+						aria-expanded="false" aria-controls="collapseExample">
+						Решение
+					</button>
+				</p>
+				<div class="collapse" id="collapseExample1">
+					<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+int main()
+{
+	const int  n = 10;
+	int a[n];
+	for (int i = 0; i < n; i++)
+	{
+		printf("a[%d] = ", i);
+		scanf("%d", &a[i]);
+	}
+	for (int i = 0; i < n; i++)
+	{
+		printf("%d\t",  a[i]);
+	}
+	printf("\n");
+	int i1 = -1, i2 = -1;
+	for (int i = 0; i < n; i++)
+	{
+		if (!a[i])
+		{
+			if (i1 == -1)
+			{
+				i1 = i;
+			}
+			else
+			{
+				if (i2 == -1)
+				{
+					i2 = i;
+				}
+				else
+				{
+					break;
+				}
+			}
+		}
+
+	}
+	if (i2 == -1)
+	{
+		printf("0\n");
+	}
+	else
+	{
+		if (i1 == i2 - 1)
+		{
+			printf("no numbers between zeros\n");
+		}
+		else
+		{
+			int s = 0;
+			for (int i = i1 + 1; i < i2; i++)
+			{
+				s += a[i];
+			}
+			printf("sum = %d", s);
+		}
+	}
+	return 0;
+}
+						</code>
+					</pre>
+				</div>
+<li>Найдите наибольший элемент массива. Найдите наименьший элемент массива. Вывести значения и индексы наибольшего и наименьшего. </li>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample2"
+						aria-expanded="false" aria-controls="collapseExample">
+						Решение
+					</button>
+				</p>
+				<div class="collapse" id="collapseExample2">
+					<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+int main()
+{
+	const int  n = 10;
+	int a[n];
+	for (int i = 0; i < n; i++)
+	{
+		printf("a[%d] = ", i);
+		scanf("%d", &a[i]);
+	}
+	for (int i = 0; i < n; i++)
+	{
+		printf("%d\t",  a[i]);
+	}
+	printf("\n");
+	int max=a[0], min=a[0], iMax=0, iMin=0;
+	for (int i = 0; i < n; i++)
+	{
+		if (max < a[i])
+		{
+			max = a[i];
+			iMax = i;
+		}
+		if (min > a[i])
+		{
+			min = a[i];
+			iMin = i;
+		}
+	}
+	printf("max = a[%d] = %d, min = a[%d] = %d", iMax, max, iMin, min);			
+	return 0;
+}
+						</code>
+					</pre>
+				</div>
+<li>Преобразовать массив так, чтобы сначала шли нулевые элементы, а затем все остальные.</li>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample3"
+						aria-expanded="false" aria-controls="collapseExample">
+						Решение
+					</button>
+				</p>
+				<div class="collapse" id="collapseExample3">
+					<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+int main()
+{
+	const int  n = 10;
+	int a[n];
+	for (int i = 0; i < n; i++)
+	{
+		printf("a[%d] = ", i);
+		scanf("%d", &a[i]);
+	}
+	for (int i = 0; i < n; i++)
+	{
+		printf("%d\t",  a[i]);
+	}
+	printf("\n");
+	int i1 = 0, i2 = n - 1;
+	while (i1 < i2)
+	{
+		while (i1 < i2 && !a[i1])
+		{
+			i1++;
+		}
+		while (i2 > i1 && a[i2])
+		{
+			i2--;
+		}
+		if (i1 < i2)
+		{
+			int tmp = a[i1];
+			a[i1] = a[i2];
+			a[i2] = tmp;
+		}
+		i1++;
+		i2--;
+	}
+	for (int i = 0; i < n; i++)
+	{
+		printf("%d\t", a[i]);
+	}	
+	return 0;
+}
+						</code>
+					</pre>
+				</div>				
+							
+		</ul>
+			</main>
+	
+</body>
+
+</html>

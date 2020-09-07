@@ -1,0 +1,683 @@
+<!doctype html>
+<html>
+
+<head>
+	<link rel="stylesheet" href="./css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+	</script>
+
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+	<script src="../js/bootstrap.bundle.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+
+	<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+	<meta charset="utf-8">
+	<title>Цикл for</title>
+</head>
+
+<body>
+	<header>
+		<nav class="navbar navbar-dark static-top navbar-expand-md navbar-dark bg-dark shadow-md">
+			<a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">IT_CLUB</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04"
+				aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarsExample04">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Link</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false">Dropdown</a>
+						<div class="dropdown-menu" aria-labelledby="dropdown04">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+						</div>
+					</li>
+				</ul>
+				<form class="form-inline my-2 my-md-0">
+					<input class="form-control" type="text" placeholder="Search">
+				</form>
+			</div>
+		</nav>
+
+	</header>
+
+	<div class="container-fluid">
+		<div class="row">
+			<nav class="col-md-2 d-none d-md-block bg-light sidebar">
+				<div class="sidebar-sticky">
+					<ul class="nav flex-column">
+						<li class="nav-item">
+							<a class="nav-link active" href="#">
+								<span data-feather="home"></span>
+								Введение в язык <span class="sr-only">(current)</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Типы данных. Вывод и форматирование данных
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="shopping-cart"></span>
+								Products
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="users"></span>
+								Customers
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="bar-chart-2"></span>
+								Reports
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="layers"></span>
+								Integrations
+							</a>
+						</li>
+					</ul>
+
+					<h6
+						class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+						<span>Saved reports</span>
+						<a class="d-flex align-items-center text-muted" href="#">
+							<span data-feather="plus-circle"></span>
+						</a>
+					</h6>
+					<ul class="nav flex-column mb-2">
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Current month
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Last quarter
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Social engagement
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Year-end sale
+							</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+
+			<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+			<h2>План занятия:	</h2>
+		<ul>
+			<li>Описание и использование цикла for.</li>
+			<li>Замена циклов while и do-while на цикл for.</li>
+			<li>Циклы for с неполным описанием параметров.</li>
+			<li>Операторы break, continue.</li>
+			<li>Практикум.</li>		
+		</ul>
+		
+		<h2>Описание и использование цикла for.</h2>
+		<p>Вы уже изучили два цикла языка Си (while и do-while), есть ещё один цикл <b>for</b></p>
+		<p>Общий вид цикла for</p>
+	<pre class="prettyprint">
+						<code>
+	for(начальная_инициализация; условие; операторы2)
+	{
+		операторы1;
+	}
+						</code>
+	</pre>
+		<p>Начальная инициализация выполныется один раз перед началом работы цикла. В этом блоке обычно объявляется переменная и её присваивается начальное значение. Затем проверяется условие, если условие верно, то выполняются операторы1(операторы в теле цикла), затем выполняются операторы2 и снова проверяется условие и т.д. пока условие не нарушится. В качестве операторов2 обычно написано, как будет меняться переменная цикла.</p>
+		<p>Выведем числа от 1 до 10 циклом for</p>
+	<pre class="prettyprint">
+		<code>
+	for(int i=1; i<=10; i++)
+	{
+		printf("%d ",i);
+	}
+		</code>
+	</pre>
+	
+	<p>Переменная обьявленная в цикле for доступна только в пределах этого цикла. Можно использовать одну и туже переменную в нескольких циклах for.</p>
+
+	<pre class="prettyprint">
+		<code>
+	//внутренняя переменная счетчик
+	for(int i=1; i<=10; i++) 
+	{
+		printf("%d ",i);
+	}
+	for(int i=-10; i>0; i-=2)
+	{
+		printf("%d ",i);
+	}
+	int sum=0;
+	for(int i=1; i<=100; i++)
+	{
+		sum=sum+i;
+	}
+	printf("Сумма чисел от 1 до 100 = %d ",sum);
+		</code>
+	</pre>						
+	<p>При таком использованиее место в памяти под переменную i выделяется при выполнении цикла for и, как только цикл замершается, место в памяти освобождается. Переменную для цикла можно объявить один раз в начале программы и использовать во всех циклах, в таком случае переменная будет доступна во всей программе и память освободиться только после окончания программы.</p>
+
+		<pre class="prettyprint">
+		<code>
+	//внешняя переменная счетчик
+	int i; //объявление одной переменной для всех циклов
+	for(i=1; i<=10; i++) 
+	{
+		printf("%d ",i);
+	}
+	for(i=-10; i>0; i-=2)
+	{
+		printf("%d ",i);
+	}
+	int sum=0;
+	for(i=1; i<=100; i++)
+	{
+		sum=sum+i;
+	}
+	printf("Сумма чисел от 1 до 100 = %d ",sum);
+		</code>
+	</pre>	
+<p><b>Внутренняя переменная счетчик используется чаще всего!</b></p>
+
+<h2>Замена циклов while и do-while на цикл for.</h2>
+							
+		<p>Все циклы в языке Си взаимозаменяемы, т.е. всегда любой из циклов можно заменить на другой. Однако, для разных ситуаций удобно использовать разлицные циклы. Если известно, что переменная меняется в каком-то заданном промежутке, то используется цикл for. Если работа цикла зависит от какого-то начального условия, то используется цикл while. Если сначала необходимо выполнить какие-то действия, а только потом проверять условие, то исрользуется цикл do-while.</p>
+		<p>Все три цикла делают одно и тоже: выводят числа от 1 до 10.</p>
+
+		<p>
+			<table class="table table-striped">
+						<thead>
+							<tr>
+								
+								<th>while<br>(пока, оператор с предусловием)</th>
+								<th>do-while<br>(делать-пока, оператор с постусловием)</th>
+								<th>for<br>(для, оператор для заданных значений переменной)</th>
+							</tr>
+						</thead>
+						<tbody>
+							
+								<td><pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;locale.h&gt;
+int main()
+{
+	int x=1;
+	while(x <= 10)
+	{
+		printf("%d ",x);
+		x++;
+	}
+	return 0;
+}
+						</code>
+		</pre></td>
+								<td><pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;locale.h&gt;
+int main()
+{
+	int x=1;
+	do
+	{
+		printf("%d ",x);
+		x++;
+	}while(x <= 10);
+	return 0;
+}
+						</code>
+		</pre></td>
+		<td><pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;locale.h&gt;
+int main()
+{
+	
+	for(int x=1; x <= 10; x++)
+	{
+		printf("%d ",x);
+	}
+
+	return 0;
+}
+						</code>
+		</pre></td>
+							</tr>
+						</tbody>
+					</table>
+
+		</p>
+		<h2>Циклы for с неполным описанием параметров.</h2>
+		<p>В цикле for любая часть может отсутствовать, главное сохранить две ';'. Если отсутствует условие, то получаем бусконечный цикл, т.е. вместо условия всегда true.</p>
+
+		<pre class="prettyprint">
+						<code>
+	int x=1;
+	for(; x <= 10; x++) //отсутствует начальная инициализация
+	{
+		...
+	}
+
+	int x=1;
+	for(; x <= 10; ) //отсутствует начальная инициализация и операторы2, цикл for превратился в while
+	{
+		...
+		x++;
+	}
+
+	for( ; ; )//отсутствует все - бесконечный цикл
+	{
+		...
+	}
+
+	for(int x=0; ; x++)//отсутствует условие - бесконечный цикл со счетчиком
+	{
+		...
+	}
+	</code>
+		</pre>
+
+		
+		<h2>Операторы break, continue.</h2>
+
+		<p>При работе с циклами используются операторы <b>break</b> и <b>continue</b>. </p>
+		<p>Оператор <b>break</b> используется для принудительной остановки цикла. (Можно использовать для любого цикла)</p>
+		<p>Оператор <b>continue</b> пропускает все операторы тела цилка после оператора continue и цикл продолжает свою работу. (Можно использовать для любого цикла)</p>
+		<p><b>Программа вычисляет сумму всех вводимых чисел пока не будет введен 0.</b></p>
+
+		<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;locale.h&gt;
+int main()
+{
+	setlocale(LC_ALL,"Russian");
+	int n, sum=0;
+	
+	for( ; ; )
+	{	
+		printf("введите чило: ");
+		scanf("%d", &n);
+		if(n == 0)
+		{
+			break; //принудительная остановка цикла
+		}
+		sum+=n;
+	}
+	printf("сумма всех введенных чисел = %d", sum);
+	return 0;
+}
+						</code>
+		</pre>
+
+<p><b>Программа выводит числа от 1 до 10 пропуская 5.</b></p>
+
+		<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;locale.h&gt;
+int main()
+{
+	setlocale(LC_ALL,"Russian");
+	for(int i=1; i<=10; i++)
+	{	
+		if(i == 5)
+		{
+			continue; //пропускается одно выполнение цикла
+		}
+		printf("%d\t", i);
+	}
+	
+	return 0;
+}
+						</code>
+		</pre>
+
+
+		<h2>Задачи</h2>
+		<ul>
+			<li>Вывести четные число от 1 до n.</li>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample1"
+						aria-expanded="false" aria-controls="collapseExample">
+						Решение
+					</button>
+				</p>
+				<div class="collapse" id="collapseExample1">
+					<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+int main()
+{
+	int n;
+	printf("n = ");
+	scanf("%d", &n);
+	for (int i = 1; i <= n; i++)
+	{
+		if (i % 2 == 0)
+		{
+			printf("%d\t", i);
+		}
+	}
+	return 0;
+}
+						</code>
+					</pre>
+				</div>
+<li>Вывести таблицу умножения.</li>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample2"
+						aria-expanded="false" aria-controls="collapseExample">
+						Решение
+					</button>
+				</p>
+				<div class="collapse" id="collapseExample2">
+					<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+int main()
+{
+	for (int i = 1; i <= 10; i++)
+	{
+		for (int j = 1; j <= 10; j++)
+		{
+			printf("%d * %d = %d\n", i, j, i*j);
+		}
+	}
+	return 0;
+}
+						</code>
+					</pre>
+				</div>
+<li>Ввести 2 числа, вывести все числа от наибольшего до наименьшего.</li>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample3"
+						aria-expanded="false" aria-controls="collapseExample">
+						Решение
+					</button>
+				</p>
+				<div class="collapse" id="collapseExample3">
+					<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+int main()
+{
+	int first, second;
+	printf("first = ");
+	scanf("%d", &first);
+	printf("second = ");
+	scanf("%d", &second);
+	if (first > second) 
+	{
+		for (int i = first; i >= second; i--)
+		{
+			printf("%d ", i);
+		}
+	}
+	else 
+	{
+		for (int i = second; i >= first; i--)
+		{
+			printf("%d ", i);
+		}
+	}
+	return 0;
+}
+						</code>
+					</pre>
+				</div>				
+<li>Ввести 2 числа, вывести сумму чисел между этими числами.</li>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample4"
+						aria-expanded="false" aria-controls="collapseExample">
+						Решение
+					</button>
+				</p>
+				<div class="collapse" id="collapseExample4">
+					<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;locale.h&gt;
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	int first, second;
+	printf("Введите первое число ");
+	scanf("%d", &first);
+	printf("Введите второе число ");
+	scanf("%d", &second);
+	int sum = 0;
+	for(int i =first; i<=second; i++) //читаются от первого до второго
+	{
+			sum = sum+i;
+	}
+	printf("Сумма чисел = %d\n",sum);
+	return 0;
+}
+						</code>
+					</pre>
+				</div>	
+<li>Найти факториал числа n (произведение всех чисел от 1 до числа).</li>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample5"
+						aria-expanded="false" aria-controls="collapseExample">
+						Решение
+					</button>
+				</p>
+				<div class="collapse" id="collapseExample5">
+					<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;locale.h&gt;
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	int n, factorial=1;
+	printf("Введите число: ");
+	scanf("%d",&n);
+	for(int i=2;i<=n; i++)
+	{
+		factorial*=i;
+	}
+	printf("Факториал числа %d = %d",n, factorial);
+	return 0;
+}
+						</code>
+					</pre>
+				</div>	
+<li>Найти совершенные числа от 1 до n.</li>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample10"
+						aria-expanded="false" aria-controls="collapseExample">
+						Решение
+					</button>
+				</p>
+				<div class="collapse" id="collapseExample10">
+					<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;locale.h&gt;
+#include &lt;math.h&gt;
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	int n;
+	printf("n = ");
+	scanf("%d", &n);
+	printf("Совершенные числа:\n");
+	for (int i = 1; i <= n; i++) 
+	{
+		int sum = 0;
+		for (int j = 1; j < i; j++) 
+		{
+			if (i % j == 0)
+			{
+				sum += j;
+			}
+		}
+		if (sum == i)
+		{
+			printf("%d\n", i);
+		}
+	}
+	return 0;
+}
+						</code>
+					</pre>
+				</div>
+<li>Определить является ли введенное число простым или составным.</li>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample11"
+						aria-expanded="false" aria-controls="collapseExample">
+						Решение
+					</button>
+				</p>
+				<div class="collapse" id="collapseExample11">
+					<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;locale.h&gt;
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	int n,i;
+	printf("Введите число: ");
+	while(i<=n)
+	{
+		if(n%i==0)
+		{
+			printf("%d - delitel!\n",i);
+		}
+		i++;
+	}
+	return 0;
+}
+						</code>
+					</pre>
+				</div>
+<li>Ввести число, определить является ли оно простым или составным.</li>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample12"
+						aria-expanded="false" aria-controls="collapseExample">
+						Решение
+					</button>
+				</p>
+				<div class="collapse" id="collapseExample12">
+					<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;locale.h&gt;
+#include &lt;math.h&gt;
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	int number,i;
+	printf("Введите число: ");
+	scanf("%d", &number);
+	bool prime = true;
+	for (int i = 2; i < sqrt(number); i++)
+	{
+		if (number % i == 0)
+		{
+			prime = false;
+			break;
+		}
+	}
+	if(prime)
+	{
+		printf("%d - простое\n",number);
+	}
+	else
+	{
+		printf("%d - составное\n",number);
+	}
+	return 0;
+}
+						</code>
+					</pre>
+				</div>		
+<li>Ввести n, посчитать 2^n циклом, n >= 0.</li>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample13"
+						aria-expanded="false" aria-controls="collapseExample">
+						Решение
+					</button>
+				</p>
+				<div class="collapse" id="collapseExample13">
+					<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+int main()
+{
+	int n;
+	printf("n = ");
+	scanf("%d", &n);
+	if (n >= 0) 
+	{
+		int numer = 1;
+		while (n>=0) 
+		{
+			number *= 2;
+			n--;
+		}
+		printf("2^%d = %d\n", n, number);
+	}
+	return 0;
+}
+						</code>
+					</pre>
+				</div>														
+		</ul>
+			</main>
+	
+</body>
+
+</html>

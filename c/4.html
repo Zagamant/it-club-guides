@@ -1,0 +1,424 @@
+<!doctype html>
+<html>
+
+<head>
+	<link rel="stylesheet" href="./css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+	</script>
+
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+	<script src="../js/bootstrap.bundle.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+
+	<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+	<meta charset="utf-8">
+	<title>Дополнительные библиотеки и функции</title>
+</head>
+
+<body>
+	<header>
+		<nav class="navbar navbar-dark static-top navbar-expand-md navbar-dark bg-dark shadow-md">
+			<a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">IT_CLUB</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04"
+				aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarsExample04">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Link</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false">Dropdown</a>
+						<div class="dropdown-menu" aria-labelledby="dropdown04">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+						</div>
+					</li>
+				</ul>
+				<form class="form-inline my-2 my-md-0">
+					<input class="form-control" type="text" placeholder="Search">
+				</form>
+			</div>
+		</nav>
+
+	</header>
+
+	<div class="container-fluid">
+		<div class="row">
+			<nav class="col-md-2 d-none d-md-block bg-light sidebar">
+				<div class="sidebar-sticky">
+					<ul class="nav flex-column">
+						<li class="nav-item">
+							<a class="nav-link active" href="#">
+								<span data-feather="home"></span>
+								Введение в язык <span class="sr-only">(current)</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Типы данных. Вывод и форматирование данных
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="shopping-cart"></span>
+								Products
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="users"></span>
+								Customers
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="bar-chart-2"></span>
+								Reports
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="layers"></span>
+								Integrations
+							</a>
+						</li>
+					</ul>
+
+					<h6
+						class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+						<span>Saved reports</span>
+						<a class="d-flex align-items-center text-muted" href="#">
+							<span data-feather="plus-circle"></span>
+						</a>
+					</h6>
+					<ul class="nav flex-column mb-2">
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Current month
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Last quarter
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Social engagement
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Year-end sale
+							</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+
+			<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+			<h2>План занятия:	</h2>
+		<ul>
+			<li>Библиотека locale.h и подключение русского языка</li>
+			<li>Библиотека math.h и математические функции</li>
+			<li>Практикум</li>		
+		</ul>
+		
+		<h2>Библиотека locale.h и подключение русского языка</h2>
+		<p>По умолчанию функция printf() выводит только латинские символы и цифры, если написать в кавычках текст на руском языке получим "абракадабру".</p>
+		<p>Запустим эту программу: </p>
+		<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+int main()
+{
+	printf("Всем привет!");//вывод текста на русском языке
+	return 0;
+}
+						</code>
+		</pre>
+		<p>Получим вот такой результат: </p>
+		<p><img src="img/img4_1.jpg"  width="816" height="207"></p>
+		<p>В библиотеке <b>&lt;locale.h&gt;</b> находится функция <b>setlocale(LC_ALL,"Russian")</b>. Данная функция позволяет установить любую локаль. В нашем случае мы выбираем локаль "Russian".</p>
+		<p>*В программировании <b>лока́ль</b> — это набор параметров, включая набор символов, язык пользователя, страну, часовой пояс, а также другие предустановки, которые пользователь ожидает видеть в пользовательском интерфейсе.</p>
+			<p>Изменим нашу программу: </p>
+		<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;locale.h&gt; //подключение библиотеки для функции setlocale
+int main()
+{
+	setlocale(LC_ALL, "Russian");//установим локаль "Russian"
+	printf("Всем привет!\n");//вывод текста на русском языке
+	return 0;
+}
+						</code>
+		</pre>
+		<p>Получим вот такой результат: </p>
+		<p><img src="img/img4_2.jpg"  width="816" height="207"></p>
+
+		<p></p>
+
+		<h2>Библиотека math.h и математические функции</h2>
+		<p>В библиотеке <b>math.h</b> находятся все математические функции. В таблице ниже приведены только некоторые из них. Перед использованием любой из математических функций необходимо подключить библиотеку <b>math.h</b>.</p>
+		<code class="prettyprint">
+		#include &lt;math.h&gt; //подключение библиотеки math.h
+		</code>
+		<p><br><b>Математические функции</b></p>
+		<p>
+			<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>Название</th>
+								<th>Описание</th>
+								<th>Пример</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>pow(x,y)</td>
+								<td>возведение числа x в степень y</td>
+								<td>pow(2,7)=128<br>pow(9, 0.5)=3</td>
+							</tr>
+							<tr>
+								<td>sqrt(x)</td>
+								<td>квадратный корень из x</td>
+								<td>pow(2,7)=128<br>pow(9, 0.5)=3</td>
+							</tr>
+							<tr>
+								<td>fabs(x)</td>
+								<td>абсолютное знвчение x</td>
+								<td>если x>0, то fabs(x)=x<br>если x=0, то fabs(x)=0<br>если x&lt0, то fabs(x)=-x</td>
+							</tr>
+							<tr>
+								<td>ceil(x)</td>
+								<td>округление x до наименьшего целого не меньше х</td>
+								<td>ceil(9.2)=10<br>ceil(-9.8)=-9</td>
+							</tr>
+							<tr>
+								<td>exp(x)</td>
+								<td>экспоненциальная функция e в степени x</td>
+								<td>exp(1)=2.718282<br>exp(2)=7.389056</td>
+							</tr>
+							<tr>
+								<td>log(x)</td>
+								<td>логарифм натуральный x (по основанию e)</td>
+								<td>log(2.718282)=1<br>log(7.389056)=2</td>
+							</tr>
+							<tr>
+								<td>log10(x)</td>
+								<td>логарифм десятичный x (по основанию 10)</td>
+								<td>log10(1)=0<br>log10(10)=1</td>
+							</tr>
+							<tr>
+								<td>sin(x)</td>
+								<td>синус x(x в радианах)</td>
+								<td>sin(0)=0</td>
+							</tr>
+							<tr>
+								<td>cos(x)</td>
+								<td>косинус x(x в радианах)</td>
+								<td>cos(0)=1</td>
+							</tr>
+							<tr>
+								<td>tan(x)</td>
+								<td>тангенс x(x в радианах)</td>
+								<td>tan(0)=0</td>
+							</tr>
+						</tbody>
+					</table>
+		</p>
+
+		<h2>Задачи</h2>
+		<ul>
+			<li>В прямоугольном треугольнике даны два катета, необходимо рассчитать гипотенузу.</li>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample1"
+						aria-expanded="false" aria-controls="collapseExample">
+						Решение
+					</button>
+				</p>
+				<div class="collapse" id="collapseExample1">
+					<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;locale.h&gt;
+#include &lt;math.h&gt;
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	double a, b, c;
+	printf("Введите два катета: \n");
+	scanf("%lf%lf", &a, &b);
+	c = sqrt(pow(a, 2) + pow(b, 2));
+	printf("Гипотенуза треугольника с катетами %lf и %lf равна %lf", a, b, c);
+	return 0;
+}
+						</code>
+					</pre>
+				</div>
+<li>Ввести вещественное число, вывести его дробную часть</li>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample2"
+						aria-expanded="false" aria-controls="collapseExample">
+						Решение
+					</button>
+				</p>
+				<div class="collapse" id="collapseExample2">
+					<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;locale.h&gt;
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	float number;
+	printf("Введите число: \n");
+	scanf("%d", &number);
+	printf("%f\n", number-(int)number);
+	return 0;
+}
+						</code>
+					</pre>
+				</div>				
+<li>Ввести координаты 2 точек (x, y). Вывести расстояние между ними</li>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample3"
+						aria-expanded="false" aria-controls="collapseExample">
+						Решение
+					</button>
+				</p>
+				<div class="collapse" id="collapseExample3">
+					<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;locale.h&gt;
+#include &lt;math.h&gt;
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	int x1, x2, y1, y2;
+	printf("Введите координаты: \n");
+	printf("x1 = ");
+	scanf("%d", &x1);
+	printf("y1 = ");
+	scanf("%d", &y1);
+	printf("x2 = ");
+	scanf("%d", &x2);
+	printf("y2 = ");
+	scanf("%d", &y2);
+	float L = sqrt( pow((x1-x2), 2.) + pow((y1-y2), 2.) );
+	printf("L = %f\n", L);
+	return 0;
+}
+						</code>
+					</pre>
+				</div>				
+<li>Пользователь вводит радиус окружности. Найти и вывести площадь круга</li>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample4"
+						aria-expanded="false" aria-controls="collapseExample">
+						Решение
+					</button>
+				</p>
+				<div class="collapse" id="collapseExample4">
+					<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;locale.h&gt;
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	int r;
+	printf("Введите радиус окружности: \n");
+	scanf("%d", &r);	
+	printf("S = %f", 2 * 3.14 * r);
+	return 0;
+}
+						</code>
+					</pre>
+				</div>	
+<li>Ввести a и b. Вывести a^b</li>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample5"
+						aria-expanded="false" aria-controls="collapseExample">
+						Решение
+					</button>
+				</p>
+				<div class="collapse" id="collapseExample5">
+					<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;locale.h&gt;
+#include &lt;math.h&gt;
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	int a, b;
+	printf("Введите a: ");
+	scanf("%d", &a);
+	printf("Введите b: ");
+	scanf("%d", &b);
+	printf("a^b = %f", pow(float(a), b));
+	return 0;
+}
+						</code>
+					</pre>
+				</div>	
+<li>Найти корни уравнения x^2 + 3x - 4 = 0</li>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample6"
+						aria-expanded="false" aria-controls="collapseExample">
+						Решение
+					</button>
+				</p>
+				<div class="collapse" id="collapseExample6">
+					<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+int main()
+{
+	int a = 1, b = 3, c = -4;
+	float D = pow(b, 2.) - 4 * a * c;
+	printf("%f\n", D);
+	float x1 = (-b + sqrt(D)) / (2 * a);
+	float x2 = (-b - sqrt(D)) / (2 * a);
+	printf("x1 = %f\nx2 = %f\n", x1, x2);
+	return 0;
+}
+						</code>
+					</pre>
+				</div>							
+ 		</ul>
+			</main>
+	
+</body>
+
+</html>

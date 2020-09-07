@@ -1,0 +1,268 @@
+﻿<!doctype html>
+<html>
+
+<head>
+	<link rel="stylesheet" href="./css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+	</script>
+
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+	<script src="../js/bootstrap.bundle.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+
+	<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+	<meta charset="utf-8">
+	<title>Введение в язык</title>
+</head>
+
+<body>
+	<header>
+		<nav class="navbar navbar-dark static-top navbar-expand-md navbar-dark bg-dark shadow-md">
+			<a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">IT_CLUB</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04"
+				aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarsExample04">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Link</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false">Dropdown</a>
+						<div class="dropdown-menu" aria-labelledby="dropdown04">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+						</div>
+					</li>
+				</ul>
+				<form class="form-inline my-2 my-md-0">
+					<input class="form-control" type="text" placeholder="Search">
+				</form>
+			</div>
+		</nav>
+
+	</header>
+
+	<div class="container-fluid">
+		<div class="row">
+			<nav class="col-md-2 d-none d-md-block bg-light sidebar">
+				<div class="sidebar-sticky">
+					<ul class="nav flex-column">
+						<li class="nav-item">
+							<a class="nav-link active" href="#">
+								<span data-feather="home"></span>
+								Введение в язык <span class="sr-only">(current)</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Типы данных. Вывод и форматирование данных
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="shopping-cart"></span>
+								Products
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="users"></span>
+								Customers
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="bar-chart-2"></span>
+								Reports
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="layers"></span>
+								Integrations
+							</a>
+						</li>
+					</ul>
+
+					<h6
+						class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+						<span>Saved reports</span>
+						<a class="d-flex align-items-center text-muted" href="#">
+							<span data-feather="plus-circle"></span>
+						</a>
+					</h6>
+					<ul class="nav flex-column mb-2">
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Current month
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Last quarter
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Social engagement
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Year-end sale
+							</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+
+			<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+				<h2>План занятия:	</h2>
+		<ul>
+			<li>Типы данных в языке СИ</li>
+			<li>Создание переменных и констант</li>
+			<li>Вывод текста</li>
+			<li>Вывод переменных на экран</li>			
+		</ul>
+		
+		<h2>Типы данных в языке СИ</h2>
+		<p>Когда мы играем в игру или работаем с какой-либо программой, любые данные, которые мы видим и используем на экране (здоровье персонажа, количество патронов, количество денег на банковской карточке и т.п.) хранятся в специальных ячейках памяти - переменных. Конечно, существуют и более сложные структуры хранения, но о них мы познакомимся позже.</p>
+		<p><b>Переменная</b> - именованный участок памяти, предназначенный для хранения некоторых данных определенного типа. Тип определяет размеры этой ячейки в памяти, а также некоторые пределы минимального и максимального значения переменной. Стоит отметить, что диапазон значений может отличаться в зависимости от используемой ОС, компилятора и настроек системы. Обязательно к изучению следующая таблица основных типов данных:</p>
+				<p>
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>Тип</th>
+								<th>Название</th>
+								<th>Модификатор</th>
+								<th>Размер в памяти</th>
+								<th>Диапазон значений*</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>bool</td>
+								<td>Логический тип</td>
+								<td>-</td>
+								<td>физически - 1 бит, по факту - 1 байт</td>
+								<td>0 или 1 (true или false)</td>
+							</tr>
+							<tr>
+								<td>int</td>
+								<td>Целочисленный тип</td>
+								<td>%d</td>
+								<td>4 байта</td>
+								<td>от 3.4Е-38 до 3.4Е+38</td>
+							</tr>
+							<tr>
+								<td>float</td>
+								<td>Вещественный тип</td>
+								<td>%f</td>
+								<td>4 байта</td>
+								<td>от 3.4Е-38 до 3.4Е+38</td>
+							</tr>
+							<tr>
+								<td>double</td>
+								<td>Целочисленный тип<br>двойная точность</td>
+								<td>%lf</td>
+								<td>8 байт</td>
+								<td>от 1.7Е-308 до 1.7Е+308</td>
+							</tr>
+							<tr>
+								<td>char</td>
+								<td>Символьный тип</td>
+								<td>%d или %c</td>
+								<td>1 байт</td>
+								<td>от -128 до 127 (коды символов)</td>
+							</tr>
+							<caption>*Стоит отметить, что диапазон значений может отличаться в зависимости от
+								используемой ОС,
+								компилятора и настроек системы.</caption>
+						</tbody>
+					</table>
+				</p>
+			<p>Кроме этого, существуют некоторые специальные модификаторы, которые можно написать перед типом переменных и таким образом немного изменитиь диапазоны значений:
+		</p>
+		<ul>
+			<li><b>short</b> - поставив этот модификатор, мы уменьшим количество выделяемой памяти в 2 раза. Позволяет немного экономить память в приложениях. К примеру, short int a = 10;</li>
+			<li><b>long</b> - увеличивает выделяемую память в 2 раза, увеличивая диапазон хранимых значений.</li>
+			<li><b>unsigned</b> - "запрещает" хранение отрицательных чисел в переменной, сдвигая диапазон в сторону положительных чисел в два раза.</li>		
+		</ul>
+		<br>
+		<h2>Создание переменных</h2>
+		<p>Прежде чем создавать переменные и научиться работать с ними, мы разделим их создание на два этапа.</p>
+		<p><b>Объявление переменной</b> - момент, когда мы выделяем память для хранения переменной и даем ей имя. При объявлении переменной её значение ничему не равно - мы можем только записать туда значение, но не можем к переменной что-либо добавить или использовать ее в арифметических выражениях. Если попробовать это сделать, мы получим ошибку "Переменная не инициализирована". Для объявления переменной достаточно написать тип переменной и её имя.</p>
+		<p><b>Инициализация переменной</b> - момент записи значения в переменную. Можно указать значение напрямую, ввести с клавиатуры, прочитать из файла, получить в результате работы функции или выражения  и т.п. Значение можно указать сразу при объявлении.</p>
+		<p>Простые примеры:</p>
+		<code class="prettyprint">
+		int a;  //объявляем переменную a<br>
+		int b,c; //сразу можно объявить несколько переменных.<br>
+		float A,B,C; //переменные разных типов надо обьявлять на разных строках, а одного типа - можно в одной строке.<br>
+		float a; //вот тут мы получим ошибку - переменная a уже существует. При этом в предыдущей строке ошибки нет - имя переменных чувствительно к регистру.<br>
+		int a1, a_1, b_1_b; //в именах переменных можно использовать нижнее подчеркивание и цифры. Нельзя начинать имя переменной с цифры!<br>
+		int d = 10; //сразу обьявили и инициализировали переменную<br>
+		a = d+20; //тоже инициализация переменной<br>
+		</code>
+		<p>Есть некоторые правила создания переменных:</p>
+		<ul>
+			<li>Имя переменной должно отражать её суть! Переменные с непонятными названиями сложно читать и использовать. Если Вам нужно хранить цену товара, то так и назовите переменную - cost, а не x,a,c,ololo и прочее :)</li>
+			<li>Не используйте транслит - переменные с названиями cena, druzya, storonaKvadrata и прочие - нехороший тон.</li>
+			<li>Старайтесь минимизировать количество используемых переменных, но не переусердствуйте!</li>		
+		</ul>
+		<p>Также существует такая штука как <b>константа</b> - участок памяти с записанным в него значением, изменить которое уже нельзя. Константы полезны для того, чтобы в коде было лучше понятно, за что отвечает то или иное значение. Создается константа просто - перед обьявлением переменной добавляем ключевое слово <b>const</b>Простой пример:</p>
+		<code class="prettyprint">
+		//что лучше, так - <br>
+			float l = 2 * 3.14 * R;<br>
+		//или обьявить число ПИ как константу?<br>
+		const float PI = 3.14;<br>
+			float l = 2 * PI * R;<br>
+		</code>
+		<br>
+		<h2>Вывод данных и переменных на экран</h2>
+		<p>Для вывода значений и сообщений на экран, существует функция printf. По умолчанию она умеет работать только с латинскими символами и цифрами, но мы впоследствии научим работать её и с кириллицей. Для вывода сообщений на экран просто укажите сообщение в кавычках внутри printf():</p>
+		<code class="prettyprint">
+		printf("HERE IS MY MESSAGE!\n");
+		</code>
+		<p>Как мы уже упоминали, \n используется для перевода на следующую строку. Также есть специальные символы \a (издает звук из динамиков) и \t (используется для вывода табуляции.</p>
+		<p>Некоторые проблемы возникают с выводом специальных символов типа ",%,',\ и еще некоторых других. Для их выаода надо перед ними поставить обратный слеш (\) - он же символ экранирования </p>
+		<code class="prettyprint">
+		printf("Hotel \"Tourist\" \n");//если не поставить обратный слеш, получим ошибку!
+		</code>
+		<p>
+		Для вывода значений переменных нужно всего лишь указать в кавычках модификатор переменной, который Вы хотите вывести на экран (напомним, что модификатор зависит от типа переменной),а после кавычек, через запятую, указываем переменные, значение которых нужно вывести. Можно выводить одну переменную саму по себе, переменную и текст, несколько переменных и даже результаты выражений:
+		</p>
+		<code class="prettyprint">
+		int a = 10,b=20;<br>
+		printf("%d",a); //просто выводим 10 на экран<br>
+		printf("a = %d\n"); //выводим сообщение a=10 на экран)<br>
+		printf("a+b=%d\n",a+b); //выводим сообщение a+b=30;<br>
+		printf("%d+%d=%d\n",a,b,a+b); //выводим 10+20=30<br>
+		</code>
+		<h2>Задачи</h2>
+		<ul>
+			<li>С помощью printf нарисуйте елочку звездочками в консоли</li>
+			<li>Создайте программу, которая выводит на экран Ваше имя, каждый символ побуквенно с новой строки</li>	
+		</ul>
+			</main>
+	
+</body>
+
+</html>

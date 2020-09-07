@@ -1,0 +1,425 @@
+<!doctype html>
+<html>
+
+<head>
+	<link rel="stylesheet" href="./css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+	</script>
+
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+	<script src="../js/bootstrap.bundle.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+
+	<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+	<meta charset="utf-8">
+	<title>Пользовательские функции.</title>
+</head>
+
+<body>
+	<header>
+		<nav class="navbar navbar-dark static-top navbar-expand-md navbar-dark bg-dark shadow-md">
+			<a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">IT_CLUB</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04"
+				aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarsExample04">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Link</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false">Dropdown</a>
+						<div class="dropdown-menu" aria-labelledby="dropdown04">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+						</div>
+					</li>
+				</ul>
+				<form class="form-inline my-2 my-md-0">
+					<input class="form-control" type="text" placeholder="Search">
+				</form>
+			</div>
+		</nav>
+
+	</header>
+
+	<div class="container-fluid">
+		<div class="row">
+			<nav class="col-md-2 d-none d-md-block bg-light sidebar">
+				<div class="sidebar-sticky">
+					<ul class="nav flex-column">
+						<li class="nav-item">
+							<a class="nav-link active" href="#">
+								<span data-feather="home"></span>
+								Введение в язык <span class="sr-only">(current)</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Типы данных. Вывод и форматирование данных
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="shopping-cart"></span>
+								Products
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="users"></span>
+								Customers
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="bar-chart-2"></span>
+								Reports
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="layers"></span>
+								Integrations
+							</a>
+						</li>
+					</ul>
+
+					<h6
+						class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+						<span>Saved reports</span>
+						<a class="d-flex align-items-center text-muted" href="#">
+							<span data-feather="plus-circle"></span>
+						</a>
+					</h6>
+					<ul class="nav flex-column mb-2">
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Current month
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Last quarter
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Social engagement
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Year-end sale
+							</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+
+			<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+			<h2>План занятия:	</h2>
+		<ul>
+			<li>Функции с параметрами и без параметров.</li>		
+			<li>Функции с возвращаемым значением и без него.</li>
+			<li>Практикум.</li>		
+		</ul>
+		<h2>Функции с параметрами и без параметров.</h2>
+		<p><b>Функция</b> (подпрограмма) —  фрагмент программного кода, к которому можно обратиться из другого места программы.</p>
+		<p>До этого весь код мы писали в функции main - это главная функция, с неё начинается выполнение кода. Кроме main мы можем писать любые свои функции. </p>
+		<p>Все наши функции должны быть написаны после подключения библиотек (include) и перед функцией main!</p>
+		<p><b>Шаблон для создания функции:</b></p>
+		 <pre class="prettyprint">
+						<code>
+возвращаемый_тип имя_функции(передаваемые_в_функцию_переменные)
+{
+	тело функции, тот код, который выполняет данная функция
+	return значение; //return писать не нужно, если функция ничего не возвращает
+}
+</code>
+	</pre>
+	<p>Разберемся с каждой частью описания функции.</p>
+	<p><b>Возвращаемый тип</b> - это тип переменной, которая хранит результат работы функции. Если функция ничего не возвращает, то пишем void. Если после работы функции, результат нужно сохранить для дальнейшего использования, то указываем возвращаемый тип. Если функция что-то вычисляет и ответ сразу выводит, то возвращать ничего не нужно и пишем void. Желательно чтобы функция возвращала результат.</p>
+	<p><b>Имя функции </b> - это название, которое мы сами придумываем для функции. Имя функции должно описывать, что будет делать данная функция. Имена функций в Си принято писать с маленькой буквы, если необходимо несколько слов, то следующее слово пишем с большой буквы, но без пробелов. Можно использовать в имени знак подчеркивание '_'. Например: createArray (создать массив), printArray (вывести массив), sort(сортировка), summ(сумма) и т.д.</p>
+	<p><b>Передаваемые в функцию переменные(параметры)</b> - это данные, которые передаются в функцию при вызове, эти данные функция использует в процессе работы. Для каждой переменной необходима указывать тип (int a, int b, double c - верно, int a, b, c - не верно). Если функция работает без парметров, то ставим пустые круглые скобки (). </p>
+	<p><b>Тело функции</b> - это логика работы функции, все действия, которые функция должна выполнить.</p>
+	<p><b>return значение</b> - это возврат результата работы функции. Если функция ничего не возвращает, то return писать не нужно.</p>
+	<p>Рассмотрим несколько примеров.</p>
+	<p>Функция вычисляет сумму двух чисел:</p>
+ <pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+
+//функция без параметров и без возвращаемого типа
+void summ()
+{
+	int a, b;
+	printf("enter a\n");
+	scanf("%d", &a);
+	printf("enter b\n");
+	scanf("%d", &b);
+	printf("%d + %d = %d", a, b, a+b);
+}
+
+//функция c параметрами и без возвращаемого типа
+void summ(int a, int b)  //в данном случае можно использовать такое же название, т.к. функции отличаются количеством передаваемых параметров - перегрузка функций
+{
+	printf("%d + %d = %d", a, b, a+b);
+}
+
+int main()
+{
+	//вызов функции без параметров
+	summ(); //при вызове любой функции необходимо указать её название и в () передать параметры, если параметров нет, то пустые скобки
+	int a, b;
+	printf("enter a\n");
+	scanf("%d", &a);
+	printf("enter b\n");
+	scanf("%d", &b);
+	//вызов функции с параметрами
+	summ(a, b); //при передаче переменных в функцию типы данных указывать не нужно, мы передаем значения
+	summ(2, 3); //можно сразу передать два числа
+	summ(a, 10); //можно переменную и число
+	return 0;
+}
+
+</code>
+	</pre>
+
+<p><b>Перегрузка функций</b> - это несколько функций в одной программе с одинаковым названием, но разным количеством или типом параметров.</p>
+<p>Вызов функции без возвращаемого типа: </p>
+	 <pre class="prettyprint">
+						<code>
+имя_функции(передаваемые_в_функцию_параметры); //если параметры есть
+имя_функции(); //если параметров нет
+</code>
+	</pre>
+
+	<h2>Функции с возвращаемым значением и без него.</h2>
+	<p>Функции описанные в предыдущем примере, не очень удачные, т.к. функции ничего не возвращают (void), то результат работы функции мы никак не можем использовать в дальнейшем. Перепишем наши функции так, чтобы они возвращали результат.</p>
+ <pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+
+//функция без параметров с возвращаемым типом int
+int summ()  //возвращаемый тип int
+{
+	int a, b;
+	printf("enter a\n");
+	scanf("%d", &a);
+	printf("enter b\n");
+	scanf("%d", &b);
+	return a + b; //возврат значения из функции
+}
+
+//функция c параметрами и возвращаемым типом int
+int summ(int a, int b)  //в данном случае можно перегрузка функции
+{
+	return a + b; //возврат значения из функции
+}
+
+//функция c параметрами и возвращаемым типом double
+double summ(double a, double b)  //в данном случае можно перегрузка функции по типам
+{
+	return a + b; //возврат значения из функции
+}
+
+
+int main()
+{
+	//вызов функции без параметров и с возвращаемым типом int
+	int s = summ(); //т.к. функция возвращает значение, то его нужно сохранить в переменную
+	printf("summa = %d", s);
+	printf("summa = %d", summ());  //вызов функции summ при вызове функции printf
+	int a, b;
+	printf("enter a\n");
+	scanf("%d", &a);
+	printf("enter b\n");
+	scanf("%d", &b);
+	//вызов функции с параметрами и возвращаемым типом int
+	s = summ(a, b);
+	printf("summa = %d", s);
+	s = summ( summ(1, 2), summ(3, 4)); //вызов функции как параметр для другой функции будет работать, получим 1+2+3+4
+	printf("summa = %d", s);
+	printf("summa = %lf", summ(3.5, 4.2)); //т.к. при вызове переданы числа типа double, то вызовется третий вариант функции summa
+	return 0;
+}
+
+</code>
+	</pre>
+
+		<h2>Задачи</h2>
+		<ul>
+			<li>Функция принимает два числа (делимое и делитель) и возврвщает частное. Если делитель равен нулю, то написать ошибку и вернуть ноль!</li>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample1"
+						aria-expanded="false" aria-controls="collapseExample">
+						Решение
+					</button>
+				</p>
+				<div class="collapse" id="collapseExample1">
+					<pre class="prettyprint">
+						<code>
+	#define _CRT_SECURE_NO_WARNINGS
+	#include &lt;stdio.h&gt;
+
+	float divide(int num, int divider)
+	{
+		if(divider!=0)
+		{
+			return (float)num/divider;
+		}
+		else
+		{
+			printf("Error! Division by zero!\n");
+			return 0;
+		}
+	}
+
+	void main()
+	{
+		float num = divide(10,0);
+		printf("%f\n",num);
+		num = divide(10,5);
+		printf("%f\n",num);
+	}
+						</code>
+					</pre>
+				</div>
+			
+	<li>Написать функцию возведения числа в степень.</li>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample2"
+						aria-expanded="false" aria-controls="collapseExample">
+						Решение
+					</button>
+				</p>
+					<div class="collapse" id="collapseExample2">
+					<pre class="prettyprint">
+						<code>
+	#define _CRT_SECURE_NO_WARNINGS
+	#include &lt;stdio.h&gt;
+
+	int power(int x, int n)
+	{
+		int p=1;
+		for(int i=0; i&lt;n; i++)
+		{
+			p=p*x;
+		}
+		return p;
+	}
+
+	void main()
+	{
+		printf("2^5 = %d\n",power(2,5));
+	}
+						</code>
+					</pre>
+				</div>	
+	<li>Написать функцию поиска наибольшего из двух чисел.</li>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample3"
+						aria-expanded="false" aria-controls="collapseExample">
+						Решение
+					</button>
+				</p>
+				<div class="collapse" id="collapseExample3">
+					<pre class="prettyprint">
+						<code>
+	#define _CRT_SECURE_NO_WARNINGS
+	#include &lt;stdio.h&gt;
+
+	int max(int x, int y)
+	{
+		if(x>y)
+		{
+			return x;
+		}
+		else
+		{
+			return y;
+		}
+	}
+
+	void main()
+	{
+		int a, b;
+		printf("enter a\n");
+		scanf("%d", &a);
+		printf("enter b\n");
+		scanf("%d", &b);
+		printf("max = %d\n",max(a,b));
+	}
+						</code>
+					</pre>
+				</div>	
+<li>Написать функцию проверки числа на простое.</li>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample4"
+						aria-expanded="false" aria-controls="collapseExample">
+						Решение
+					</button>
+				</p>
+							<div class="collapse" id="collapseExample3">
+					<pre class="prettyprint">
+						<code>
+	#define _CRT_SECURE_NO_WARNINGS
+	#include &lt;stdio.h&gt;
+
+	bool isPrime(int x)
+	{
+		for(int i=2; i&lt;x; i++)
+		{
+			if(x % i == 0)
+			{
+				return false;
+			}
+		}
+		return true;
+	}
+
+	void main()
+	{
+		int x;
+		printf("enter x\n");
+		scanf("%d", &x);
+		if(isPrime(x)) //вызов функции с возвращаемым типом bool чаще всего осуществляется в if
+		{
+			printf("%d prime\n",x);
+		}
+		else
+		{
+			printf("%d not prime\n",x);
+		}
+		
+	}
+						</code>
+					</pre>
+				</div>				
+		</ul>
+
+			</main>
+	
+</body>
+
+</html>

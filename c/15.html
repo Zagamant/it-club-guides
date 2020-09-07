@@ -1,0 +1,297 @@
+<!doctype html>
+<html>
+
+<head>
+	<link rel="stylesheet" href="./css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+	</script>
+
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+	<script src="../js/bootstrap.bundle.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+
+	<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+	<meta charset="utf-8">
+	<title>Строки.</title>
+</head>
+
+<body>
+	<header>
+		<nav class="navbar navbar-dark static-top navbar-expand-md navbar-dark bg-dark shadow-md">
+			<a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">IT_CLUB</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04"
+				aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarsExample04">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Link</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false">Dropdown</a>
+						<div class="dropdown-menu" aria-labelledby="dropdown04">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+						</div>
+					</li>
+				</ul>
+				<form class="form-inline my-2 my-md-0">
+					<input class="form-control" type="text" placeholder="Search">
+				</form>
+			</div>
+		</nav>
+
+	</header>
+
+	<div class="container-fluid">
+		<div class="row">
+			<nav class="col-md-2 d-none d-md-block bg-light sidebar">
+				<div class="sidebar-sticky">
+					<ul class="nav flex-column">
+						<li class="nav-item">
+							<a class="nav-link active" href="#">
+								<span data-feather="home"></span>
+								Введение в язык <span class="sr-only">(current)</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Типы данных. Вывод и форматирование данных
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="shopping-cart"></span>
+								Products
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="users"></span>
+								Customers
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="bar-chart-2"></span>
+								Reports
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="layers"></span>
+								Integrations
+							</a>
+						</li>
+					</ul>
+
+					<h6
+						class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+						<span>Saved reports</span>
+						<a class="d-flex align-items-center text-muted" href="#">
+							<span data-feather="plus-circle"></span>
+						</a>
+					</h6>
+					<ul class="nav flex-column mb-2">
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Current month
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Last quarter
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Social engagement
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Year-end sale
+							</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+
+			<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+			<h2>План занятия:	</h2>
+		<ul>
+			<li>Введение в строки.</li>
+			<li>Ввод и вывод строк. Проблема ввода строк после scanf (использование fflush).</li>
+			<li>Нахождение конца строки и изменение элементов.</li>
+			<li>Практикум.</li>		
+		</ul>
+		
+		<h2>Введение в строки.</h2>
+		<p><b>Строка</b> — это массив символов char. 
+			<br> При работе со строками есть некоторые особенности. При использовании числовых массивов в размере массива обычно указывается реальное количество элементов. Т.е. объявляя int mas[10] мы делаем массив на 10 элементов и все 10 используем. При объявлении строки обычно указывается размер с запасом, т.к. мы не знаем какой длины будет введена строка.</p>
+		<p>Пример объявления: </p>
+<pre class="prettyprint">
+						<code>
+char str1[100];		//объявлена строка str1 с максимальным количеством элементов 100
+char str2[200];		//объявлена строка str2 с максимальным количеством элементов 200
+</code>
+	</pre>
+
+<p>Никаких проблемм с избыточной длинной строки не будет, для обозначения длинна строки есть специальный символ '\0' и элементы записанные после этого символа выводиться не будут(там просто хранится какой-то мусор, но он нас ничем не мешает).</p>
+<p>Рекомендуется все строки при объявлении сразу сделать пустой, т.е. записать в массив символ конца строки.</p>
+
+ <pre class="prettyprint">
+						<code>
+char str[100]={'\0'};  //пустая строка, в неё можно записать максимум 100 элементов(точнее 99 и символ конца строки)
+</code>
+	</pre>
+	
+
+<h2>Ввод и вывод строк. Проблема ввода строк после scanf (использование fflush).</h2>
+<p>Для ввода строки используется функция <b>gets</b>, для вывода - <b>puts</b>. Эти функции находится в библиотеке stdio.h.</p>
+<p>Введем и выведем строку: </p>
+ <pre class="prettyprint">
+						<code>
+char str[100] = {'\0'};
+puts("Enter str:");
+gets(str); //ввод строки
+puts(str); //вывод строки
+	</code>
+	</pre>
+			
+<p>Если перед вводом строк использовалась функция scanf для ввода каких-либо переменных, то функция gets работать не будет, т.к. в потоке ввода остались старые значения и его необходимо очистить функцией fflush.</p>	
+ <pre class="prettyprint">
+						<code>
+char str[100] = {'\0'};
+puts("Enter str:");
+fflush(stdin); //очистка буфера ввода, пишем, если перед вводом строки вводили что-то ещё
+gets(str); //ввод строки
+puts(str); //вывод строки
+	</code>
+	</pre>	
+
+	<p>Кроме функции fflush можно воспользоваться таким способом:</p>
+	 <pre class="prettyprint">
+						<code>
+char str[100] = {'\0'};
+puts("Enter str:");
+while (getchar() != '\n'); //альтернатива fflush
+gets(str); //ввод строки
+puts(str); //вывод строки			
+	</code>
+	</pre>
+
+<h2>Нахождение конца строки и изменение элементов.</h2>
+		<p> Зная, что каждая строка заканчивается символом конца строки '\0',  мы можем легко перебрать все элементы строки и определить длину строки.</p>
+
+<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;locale.h&gt;
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	char str[100] = {'\0'};
+	puts("Введите строку:");
+	gets(str); 
+	int length=0;
+	for(int i =0; str[i]!='\0'; i++)
+	{
+		length++;
+	}	
+	printf("длина строки: %d", length);
+	return 0;
+}
+
+</code>
+	</pre>
+
+<p>Заменим маленькие буквы 'a' в строке на большие буквы'A' и посчитаем их количество.</p>
+<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;locale.h&gt;
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	char str[100] = {'\0'};
+	puts("Введите строку:");
+	gets(str); 
+	int count=0;
+	for(int i =0; str[i]!='\0'; i++)
+	{
+		if(str[i] == 'a')
+		{
+			str[i] = 'A';//замена маленькой буквы на большую
+			count++;
+		}
+	}	
+	puts(str);
+	printf("количество букв а: %d", count);
+	return 0;
+}
+
+</code>
+	</pre>
+
+		<h2>Задачи</h2>
+		<ul>
+			<li>Программа считает количество слов в строке, если слова введены через пробел.</li>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample1"
+						aria-expanded="false" aria-controls="collapseExample">
+						Решение
+					</button>
+				</p>
+				<div class="collapse" id="collapseExample1">
+					<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;locale.h&gt;
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	char str[100] = {'\0'};
+	puts("Введите строку:");
+	gets(str); 
+	int count=1;
+	for(int i =0; str[i]!='\0'; i++)
+	{
+		if(str[i] == ' ')
+		{
+			count++;
+		}
+	}	
+	puts(str);
+	printf("количество слов в строке: %d", count);
+	return 0;
+}
+						</code>
+					</pre>
+				</div>			
+		</ul>
+			</main>
+	
+</body>
+
+</html>

@@ -1,0 +1,296 @@
+<!doctype html>
+<html>
+
+<head>
+	<link rel="stylesheet" href="./css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+	</script>
+
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+	<script src="../js/bootstrap.bundle.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+
+	<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+	<meta charset="utf-8">
+	<title>Пользовательский ввод</title>
+</head>
+
+<body>
+	<header>
+		<nav class="navbar navbar-dark static-top navbar-expand-md navbar-dark bg-dark shadow-md">
+			<a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">IT_CLUB</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04"
+				aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarsExample04">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Link</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false">Dropdown</a>
+						<div class="dropdown-menu" aria-labelledby="dropdown04">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+						</div>
+					</li>
+				</ul>
+				<form class="form-inline my-2 my-md-0">
+					<input class="form-control" type="text" placeholder="Search">
+				</form>
+			</div>
+		</nav>
+
+	</header>
+
+	<div class="container-fluid">
+		<div class="row">
+			<nav class="col-md-2 d-none d-md-block bg-light sidebar">
+				<div class="sidebar-sticky">
+					<ul class="nav flex-column">
+						<li class="nav-item">
+							<a class="nav-link active" href="#">
+								<span data-feather="home"></span>
+								Введение в язык <span class="sr-only">(current)</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Типы данных. Вывод и форматирование данных
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="shopping-cart"></span>
+								Products
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="users"></span>
+								Customers
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="bar-chart-2"></span>
+								Reports
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="layers"></span>
+								Integrations
+							</a>
+						</li>
+					</ul>
+
+					<h6
+						class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+						<span>Saved reports</span>
+						<a class="d-flex align-items-center text-muted" href="#">
+							<span data-feather="plus-circle"></span>
+						</a>
+					</h6>
+					<ul class="nav flex-column mb-2">
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Current month
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Last quarter
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Social engagement
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Year-end sale
+							</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+
+			<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+				<h2>План занятия:	</h2>
+		<ul>
+			<li>Функция scanf и ее применение для ввода данных</li>
+			<li>Арифметические операторы</li>
+			<li>Практикум</li>		
+		</ul>
+		
+		<h2>Функция scanf и ее применение для ввода данных</h2>
+		<p>Функция scanf() предназначена для ввода данных в программу. Она может считывать данные всех базовых типов и автоматически конвертировать их в нужный внутренний формат. Данная функция, как и функция printf(), находится в библиотеке &lt;stdio.h&gt </p>
+		<p>Так же как для функции printf(), для функции scanf() в кавычках указывается модификаторы переменных, а после запятой необходимо указать список переменных. Основное различие двух этих функций заключается в особенности данного списка. Функция printf() использует имена переменных, в то время как функция scanf() - только указатели на переменные. К счастью, при применении этой функции мы можем ничего не знать об указателях. (Про указатели вы узнаете немного позже). Необходимо помнить, что если вам нужно ввести некоторое значение и присвоить его переменной одного из основных типов, то перед именем nepеменной требуется писать символ &.
+		</p>
+		<p>Рассмотрим несколько простых примеров и все станет понятно:</p>
+		<code class="prettyprint">
+		int a;  //объявляем переменную a<br>
+		printf("enter a: "); //данную строчку рекомендую написать, чтобы было понятно в какой момент необходимо вводить данные.<br>
+		scanf("%d",&a); //вводим зничение в перенную a, ввод числа заканчивается клавишей enter или пробелом.<br>
+		double b,c; //объявляем две переменные вещественного типа.<br>
+		printf("enter b, c: "); //сообщение для пользователя, что ожидается ввод двух чисел.<br>
+		scanf("%lf%lf", &b, &c); //при вводе сразу двух переменных модификаторы переменных указываются без пробела. Никаких символов, кроме модификаторов в кавычках быть не должно.<br>
+		</code>
+
+		<p></p>
+
+		<h2>Арифметические операторы</h2>
+		<p>
+			<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>Операция</th>
+								<th>Символ</th>
+								<th>Название</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>сложение</td>
+								<td>+</td>
+								<td>плюс</td>
+							</tr>
+							<tr>
+								<td>вычитание</td>
+								<td>-</td>
+								<td>дефис</td>
+							</tr>
+							<tr>
+								<td>умножение</td>
+								<td>*</td>
+								<td>звездочка</td>
+							</tr>
+							<tr>
+								<td>деление</td>
+								<td>/</td>
+								<td>слэш</td>
+							</tr>
+							<tr>
+								<td>остаток от целочисленного деления</td>
+								<td>%</td>
+								<td>процент</td>
+							</tr>
+							<tr>
+								<td>инкремент(увеличение переменной на 1)</td>
+								<td>++</td>
+								<td>два знака + без пробела</td>
+							</tr>
+							<tr>
+								<td>декремент(уменьшение на 1)</td>
+								<td>--</td>
+								<td>два знака - без пробела</td>
+							</tr>
+						</tbody>
+					</table>
+		</p>
+
+		<p>Зная арифметические операции, функции ввода и вывода, можно приступить к решению простейших задач</p>
+		<h2>Задачи</h2>
+		<ul>
+			<li>Программа определяет ваш возраст. Требует ввести год вашего рождения и нынешний год.</li>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample1"
+						aria-expanded="false" aria-controls="collapseExample">
+						Решение
+					</button>
+				</p>
+				<div class="collapse" id="collapseExample1">
+					<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+int main()
+{
+	int year, yearOfBirth, age; //объявлены переменные нынешний год, год рождения и возраст
+	printf("Enter this year: ");
+	scanf("%d", &year);//ввод нынешнего года
+	printf("Enter year of birth: ");
+	scanf("%d", &yearOfBirth);//ввод года рождения
+	age = year - yearOfBirth; //вычисляется возраст
+	printf("Age: %d\n", age); //вывод возраста
+	return 0;
+}
+						</code>
+					</pre>
+				</div>
+			<li>Дан диаметр окружности d. Найти ее длину l=PI*d. В качестве значения PI использовать 3.14.</li>	
+			<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample2"
+						aria-expanded="false" aria-controls="collapseExample">
+						Решение
+					</button>
+				</p>
+				<div class="collapse" id="collapseExample2">
+					<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+int main()
+{
+	const double PI = 3.14; //константное число PI
+	double d, l; //диаметр и длина окружности
+	printf("Enter diameter: ");
+	scanf("%lf", &d);//ввод диаметра 
+	l = d * PI; //вычисляется длина окружности
+	printf("Length: %lf\n", l); //вывод длины
+	return 0;
+}
+						</code>
+					</pre>
+				</div>
+<li>Даны стороны прямоугольника. найти периметр и площадь</li>	
+			<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample3"
+						aria-expanded="false" aria-controls="collapseExample">
+						Решение
+					</button>
+				</p>
+				<div class="collapse" id="collapseExample3">
+					<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+int main()
+{
+	int a, b; //стороны прямоугольника
+	printf("a = ");
+	scanf("%d", &a); //ввод a
+	printf("b = ");
+	scanf("%d", &b); //ввод b
+	printf("P = %d\n", (a+b)*2); //вычисление и вывод периметра
+	printf("S = %d\n", a*b);     //вычисление и вывод площади
+	return 0;
+}
+						</code>
+					</pre>
+				</div>
+ 		</ul>
+			</main>
+	
+</body>
+
+</html>

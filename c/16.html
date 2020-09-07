@@ -1,0 +1,262 @@
+<!doctype html>
+<html>
+
+<head>
+	<link rel="stylesheet" href="./css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+	</script>
+
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+	<script src="../js/bootstrap.bundle.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+
+	<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+	<meta charset="utf-8">
+	<title>Функции работы со строками.</title>
+</head>
+
+<body>
+	<header>
+		<nav class="navbar navbar-dark static-top navbar-expand-md navbar-dark bg-dark shadow-md">
+			<a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">IT_CLUB</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04"
+				aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarsExample04">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Link</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false">Dropdown</a>
+						<div class="dropdown-menu" aria-labelledby="dropdown04">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+						</div>
+					</li>
+				</ul>
+				<form class="form-inline my-2 my-md-0">
+					<input class="form-control" type="text" placeholder="Search">
+				</form>
+			</div>
+		</nav>
+
+	</header>
+
+	<div class="container-fluid">
+		<div class="row">
+			<nav class="col-md-2 d-none d-md-block bg-light sidebar">
+				<div class="sidebar-sticky">
+					<ul class="nav flex-column">
+						<li class="nav-item">
+							<a class="nav-link active" href="#">
+								<span data-feather="home"></span>
+								Введение в язык <span class="sr-only">(current)</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Типы данных. Вывод и форматирование данных
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="shopping-cart"></span>
+								Products
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="users"></span>
+								Customers
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="bar-chart-2"></span>
+								Reports
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="layers"></span>
+								Integrations
+							</a>
+						</li>
+					</ul>
+
+					<h6
+						class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+						<span>Saved reports</span>
+						<a class="d-flex align-items-center text-muted" href="#">
+							<span data-feather="plus-circle"></span>
+						</a>
+					</h6>
+					<ul class="nav flex-column mb-2">
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Current month
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Last quarter
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Social engagement
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Year-end sale
+							</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+
+			<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+			<h2>План занятия:	</h2>
+		<ul>
+			<li>Встроенные функции библиотеки string.h.</li>
+			<li>Обрезка строки, поиск элементов в строке, копирование и склеивание строк, разбиение строк на подстроки, удаление символов из строки, сортировка строк.</li>
+			<li>Практикум.</li>		
+		</ul>
+		
+		<h2>Встроенные функции библиотеки string.h.</h2>	
+<p>Полезные функции для работы со строками находятся в библиотеке <b>string.h</b>.</p>
+<p>В таблице приведены только основные функции, которые чаще всего используются.</p>
+<p>
+			<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>Название</th>
+								<th>Описание</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>int strlen(char* str)</td>
+								<td>опеределяет длину строки до нулевого символа('\0' не учитывается)</td>
+							</tr>
+							<tr>
+								<td>void strcpy(char* str2,char* str1); </td>
+								<td>функция копирует все символы из строки str1 в строку str2</td>		
+							</tr>
+							<tr>
+								<td>void strncpy(char* str2,char* str1, int n); </td>
+								<td>функция копирует первых n символов из строки str1 в строку str2</td>		
+							</tr>
+							<tr>
+								<td>void strcat(char* str2,char* str1); </td>
+								<td>функция добавляет все символы из строки str1 в строку str2(конкатенация)</td>		
+							</tr>
+							<tr>
+								<td>void strncat(char* str2,char* str1, int n); </td>
+								<td>функция добавляет первых n символов из строки str1 в строку str2</td>		
+							</tr>
+							<tr>
+								<td>int strcmp(char* str2,char* str1); </td>
+								<td>функция сравнивает строку str1 и строку str2 с учетом регистра,<br> функция возвращает 0, если строки равны, 1 - первая больше и -1 - вторая больше</td>		
+							</tr>
+								<tr>
+								<td>int strncmp(char* str2,char* str1); </td>
+								<td>функция сравнивает первых n символов из строки str1 и строки str2 с учетом регистра,<br> функция возвращает 0, если строки равны, 1 - первая больше и -1 - вторая больше</td>		
+							</tr>
+							<tr>
+								<td>int strcmpi(char* str2,char* str1); </td>
+								<td>функция сравнивает строку str1 и строку str2 без учета регистра,<br> функция возвращает 0, если строки равны, 1 - первая больше и -1 - вторая больше</td>		
+							</tr>
+						</tbody>
+					</table>
+		</p>
+
+
+		<h2>Задачи</h2>
+		<ul>
+			<li>Программа демонстрирует работу различных функций из библиотеки string.h</li>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample1"
+						aria-expanded="false" aria-controls="collapseExample">
+						Решение
+					</button>
+				</p>
+				<div class="collapse" id="collapseExample1">
+					<pre class="prettyprint">
+						<code>
+	#define _CRT_SECURE_NO_WARNINGS
+	#include &lt;stdio.h&gt;
+	#include &lt;string.h&gt;
+	int main()
+	{
+		setlocale(LC_ALL, "Russian");
+		char str[100]={'\0'};
+		gets(str);
+		printf("Количество символов в строке - %d\n",strlen(str));
+		char str2[100]={'\0'}, str3[100]={'\0'};
+		gets(str2);
+		strcpy(str3,str2); //копируем КУДА, ОТКУДА
+		puts(str3);
+		//функция strncpy отличается тем, что можно указать количество копируемых символов
+		char str4[100] = {'\0'};
+		strncpy(str4,str2,5);  //копируем 5 символов
+		puts(str4);
+		//строка, в которую копируются другие строки должна быть такой длины, чтобы все уместилось!
+		char str5[100]={'\0'}, str6[100]={'\0'};
+		gets(str5);
+		gets(str6);
+		strcat(str5, str6); //добавляем строку 6 к строке 5. Операция слепления строк называется КОНКАТЕНАЦИЕЙ (concatenation)
+		puts(str5);
+		strncat(str5,str6,2); //то же самое, но с ограничением длины
+		puts(str5);
+		strcat(str5, " TEXT"); //тоже работает
+		puts(str5);
+		char str7[100]={'\0'}, str8[100]={'\0'};
+		gets(str7);
+		gets(str8);
+		//сравнение с учетом регистра
+		//функция возвращает 0 если строки равны, 1 - если первая больше и -1 если первая строка меньше. 
+		//сравнивается не длина, а коды символов
+		if(strcmp(str7,str8)==0) 
+		{
+			printf("Строки равны\n");
+		}
+		//сравнение с учетом регистра и определенным количеством символов
+		if(strncmp(str7,str8,5)==0) 
+		{
+			printf("Строки равны 2 \n");
+		}
+		//сравнение БЕЗ учета регистра!
+		if(_strcmpi(str7,str8)==0)
+		{
+			printf("Строки равны 3 \n");
+		}	
+	}
+						</code>
+					</pre>
+				</div>	
+		</ul>
+			</main>
+	
+</body>
+
+</html>

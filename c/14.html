@@ -1,0 +1,440 @@
+<!doctype html>
+<html>
+
+<head>
+	<link rel="stylesheet" href="./css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+	</script>
+
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+	<script src="../js/bootstrap.bundle.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	
+	<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+	<meta charset="utf-8">
+	<title>Библиотека ctype.h и работа с символами.</title>
+</head>
+
+<body>
+	<header>
+		<nav class="navbar navbar-dark static-top navbar-expand-md navbar-dark bg-dark shadow-md">
+			<a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">IT_CLUB</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04"
+				aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarsExample04">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Link</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false">Dropdown</a>
+						<div class="dropdown-menu" aria-labelledby="dropdown04">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+						</div>
+					</li>
+				</ul>
+				<form class="form-inline my-2 my-md-0">
+					<input class="form-control" type="text" placeholder="Search">
+				</form>
+			</div>
+		</nav>
+
+	</header>
+
+	<div class="container-fluid">
+		<div class="row">
+			<nav class="col-md-2 d-none d-md-block bg-light sidebar">
+				<div class="sidebar-sticky">
+					<ul class="nav flex-column">
+						<li class="nav-item">
+							<a class="nav-link active" href="#">
+								<span data-feather="home"></span>
+								Введение в язык <span class="sr-only">(current)</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Типы данных. Вывод и форматирование данных
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="shopping-cart"></span>
+								Products
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="users"></span>
+								Customers
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="bar-chart-2"></span>
+								Reports
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="layers"></span>
+								Integrations
+							</a>
+						</li>
+					</ul>
+
+					<h6
+						class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+						<span>Saved reports</span>
+						<a class="d-flex align-items-center text-muted" href="#">
+							<span data-feather="plus-circle"></span>
+						</a>
+					</h6>
+					<ul class="nav flex-column mb-2">
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Current month
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Last quarter
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Social engagement
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Year-end sale
+							</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+
+			<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+			<h2>План занятия:	</h2>
+		<ul>
+			<li>Определение типа символов.</li>
+			<li>Коды символов и таблица ASCII.</li>
+			<li>Перевод символов в другие типы данных (цифровые символы в числа типа int).</li>
+			<li>Библиотека ctype.h.</li>
+			<li>Практикум.</li>		
+		</ul>
+		
+		<h2>Определение типа символов.</h2>
+		<p>Тип данных <b>char</b> — это целочисленный тип данных (short int), который используется для представления символов. 
+			<br> Каждому символу соответствует определённое число из диапазона [0;255]. Тип данных char также ещё называют <b>символьным</b> типом данных, так как графическое представление символов в Си возможно благодаря типу char.</p>
+		<p><b>Символьная константа</b> – это целочисленное значение представленное в виде символа, заключённого в одинарные кавычки, например 'a'.</p>
+		<p>Пример объявления и инициализации переменных типа char: </p>
+<pre class="prettyprint">
+						<code>
+char x = 'a';	//в переменную x записана маленькая буква а
+char y = '+';	//в переменную y записан знак плюс
+char z = '\t';	//в переменную z записан символ табуляции(сдвиг вправо)
+char k = '\"';	//в переменную k записан символ двойная кавычка
+</code>
+	</pre>
+	
+
+		<h2>Коды символов и таблица ASCII.</h2>
+		<p>Вы уже знаете, что тип char является числовым,т.е. каждому символу соответствует определенное число. Существует спецальная таблица в которой приведено соответствие символов их кодам(числовый значениям). Эта таблица называется ASCII(англ. American standard code for information interchange).</p>
+
+<img src="img/img14_1.jpg"  width="604" height="513">
+<p>Символы с кодами от 0 до 32 являются специальными символами и не имеют графического представления.</p>
+
+ <p>Зная коды символов, можно объявлять символ указав его код:</p>
+ <pre class="prettyprint">
+						<code>
+char x = 65;	//в переменную x записана большая латинская буква A
+char y = 90;	//в переменную y записана большая латинская буква Z
+char z = 224;	//в переменную z записана маленькая русская букава а
+char k = 255;	//в переменную k записана маленькая русская букава я
+</code>
+	</pre>
+	<p>При работе с русскими символами не забываем выполнить функцию setlocale(LC_ALL, "Russian"). Без этой функции работать с русскими символами не получится.</p>
+<h3>Вывод символа.</h3>
+<p>Вывод символов осуществляется уже знакомой вам функцией вывода printf указав модификатор %с или %d.</p>
+<p>Вывод символа двумя способами:</p>
+ <pre class="prettyprint">
+						<code>
+char a = 'c';
+printf("%c", a); //c - выводим символ
+printf("%d", a); //97 - выводим код символа
+	</code>
+	</pre>
+			
+<h3>Ввод символа.</h3>	
+<p>Для ввода символа используется функция ввода scanf и модификатор %c.</p>	
+ <pre class="prettyprint">
+						<code>
+char a;
+scanf("%c", &a); 	//ввод символа
+printf("a = %c", a);	//вывод символа
+	</code>
+	</pre>	
+
+	<p>Если перед вводом символа был ввод какой-то переменной другого типа, то символ ввести не получится, т.к. в потоке ввода осталось старое значение. Чтобы решить эту проблему можно воспользоваться таким способом:</p>
+	 <pre class="prettyprint">
+						<code>
+int x;
+char a;
+scanf("%d", &x);
+while (getchar() != '\n'); 	
+scanf("%c", &a); 			
+	</code>
+	</pre>
+
+<h2>Перевод символов в другие типы данных (цифровые символы в числа типа int).</h2>
+		<p> Согласно таблице ASCII коды цифровых символов расположены по порядку, от 0 дор 9. Т. е. код каждой следующей цифры будет больше на 1, чем у предудущей(0 - 48, 1 - 49, 2 - 50 ...).</p>
+		<p>Отнимая код символа '0' от кода любого другого цифрового символа получим значение этого символа в типе int. </p>
+
+<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;locale.h&gt;
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	char c;
+	int i;
+	printf("введите цифровой символ");
+	scanf("%c", &c);
+	i = c - '0';
+	printf("int i = %d", i);
+	return 0;
+}
+
+</code>
+	</pre>
+<h2>Библиотека ctype.h.</h2>	
+<p>Полезные функции для работы с символами находятся в библиотеке <b>ctype.h</b>.</p>
+<p>В таблице приведены только основные функции, которые чаще всего используются. Данные функции работают только с латинскими символами.</p>
+<p>
+			<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>Название</th>
+								<th>Описание</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>bool isdigit(char)</td>
+								<td>проверяет является ли символ цифрой</td>
+							</tr>
+							<tr>
+								<td>bool isalpha(char)</td>
+								<td>проверяет является ли символ буквой</td>		
+							</tr>
+							<tr>
+								<td>bool ispunct(char)</td>
+								<td>проверяет является ли символ знаком пунктуации или спецсимволом</td>		
+							</tr>
+							<tr>
+								<td>bool isupper(char)</td>
+								<td>проверяет является ли символ буквой в верхнем регистре</td>		
+							</tr>
+							<tr>
+								<td>bool islower(char)</td>
+								<td>проверяет является ли символ буквой в нижнем регистре</td>		
+							</tr>
+							<tr>
+								<td>bool isspace(char)</td>
+								<td>проверяет является ли символ пробельным символов (табуляция, пробел, перенос строки)</td>		
+							</tr>
+							<tr>
+								<td>char toupper(char)</td>
+								<td>преобразует символ из нижнего регистра в верхний</td>		
+							</tr>
+							<tr>
+								<td>char tolower(char)</td>
+								<td>преобразует символ из верхнего регистра в нижний</td>		
+							</tr>
+						</tbody>
+					</table>
+		</p>
+
+
+		<h2>Задачи</h2>
+		<ul>
+			<li>Программа выводит все символы и определяет какой это символ</li>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample1"
+						aria-expanded="false" aria-controls="collapseExample">
+						Решение
+					</button>
+				</p>
+				<div class="collapse" id="collapseExample1">
+					<pre class="prettyprint">
+						<code>
+	#define _CRT_SECURE_NO_WARNINGS
+	#include &lt;stdio.h&gt;
+	#include &lt;locale.h&gt;
+	int main()
+	{
+		setlocale(LC_ALL, "Russian");
+		for(int i=0; i<127; i++)
+		{
+			char s = i;
+			if(isdigit(s)) //проверяет является ли символ цифрой
+			{
+				printf("%c - цифра\n",s);
+			}
+			if(isalpha(s)) //проверяет является ли символ буквой
+			{
+				printf("%c - буква\n",s);
+			}
+			if(ispunct(s)) //проверяет является ли символ знаком пунктуации или спецсимволом 
+			{
+				printf("%c - знак\n",s);
+			}
+			if(isupper(s)) //проверяет является ли символ буквой в верхнем регистре
+			{
+				printf("%c - большая буква\n",s);
+			}
+			if(islower(s)) //проверяет является ли символ буквой в нижнем регистре
+			{
+				printf("%c - меленькая буква\n",s);
+			}
+			if(isspace(s)) //проверяет является ли символ пробельным символов (табуляция, пробел, перенос строки)
+			{
+				printf("%c - пробел\n",s);
+			}
+		}
+	}
+						</code>
+					</pre>
+				</div>
+			
+	<li>Создать программу, которая генерирует случайную последовательность символов длиной в 100 элементов</li>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample2"
+						aria-expanded="false" aria-controls="collapseExample">
+						Решение
+					</button>
+				</p>
+				<div class="collapse" id="collapseExample2">
+					<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;ctype.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;time.h&gt;
+int main()
+{
+	srand(time(NULL));
+	for(int i=0; i<100; i++)
+	{
+		char s = 14 + rand()%110;
+		printf("%c",s);
+	}
+	printf("\n");
+	return 0;
+}
+						</code>
+					</pre>
+				</div>	
+	<li>Ввести символ и если он является цифрой, то превратить его в обычную цифру типа int</li>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample3"
+						aria-expanded="false" aria-controls="collapseExample">
+						Решение
+					</button>
+				</p>
+				<div class="collapse" id="collapseExample3">
+					<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;ctype.h&gt;
+int main()
+{
+	char s;
+	scanf("%c",&s);
+	if(isdigit(s))
+	{
+		int a = s - '0';
+		//или a = s - 48;
+		printf("%d\n",a);
+	}
+	else
+	{
+		printf("no digit!\n");
+	}
+	return 0;
+}
+						</code>
+					</pre>
+				</div>		
+<li>Ввести букву и сменить ее регистр</li>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample4"
+						aria-expanded="false" aria-controls="collapseExample">
+						Решение
+					</button>
+				</p>
+				<div class="collapse" id="collapseExample4">
+					<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;ctype.h&gt;
+int main()
+{
+	char s;
+	scanf("%c",&s);
+	if(isalpha(s))
+	{
+		if(islower(s))
+		{
+			s = toupper(s);
+		}
+		else 
+		{
+			if(isupper(s))
+			{
+				s = tolower(s);
+			}
+		}
+		printf("%c\n",s);
+	}
+	else
+	{
+		printf("no letter!\n");
+	}
+	return 0;
+}
+						</code>
+					</pre>
+				</div>						
+		</ul>
+			</main>
+	
+</body>
+
+</html>

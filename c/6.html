@@ -1,0 +1,427 @@
+<!doctype html>
+<html>
+
+<head>
+	<link rel="stylesheet" href="./css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+	</script>
+
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+	<script src="../js/bootstrap.bundle.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+
+	<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+	<meta charset="utf-8">
+	<title>Сложные условия</title>
+</head>
+
+<body>
+	<header>
+		<nav class="navbar navbar-dark static-top navbar-expand-md navbar-dark bg-dark shadow-md">
+			<a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">IT_CLUB</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04"
+				aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarsExample04">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Link</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false">Dropdown</a>
+						<div class="dropdown-menu" aria-labelledby="dropdown04">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+						</div>
+					</li>
+				</ul>
+				<form class="form-inline my-2 my-md-0">
+					<input class="form-control" type="text" placeholder="Search">
+				</form>
+			</div>
+		</nav>
+
+	</header>
+
+	<div class="container-fluid">
+		<div class="row">
+			<nav class="col-md-2 d-none d-md-block bg-light sidebar">
+				<div class="sidebar-sticky">
+					<ul class="nav flex-column">
+						<li class="nav-item">
+							<a class="nav-link active" href="#">
+								<span data-feather="home"></span>
+								Введение в язык <span class="sr-only">(current)</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Типы данных. Вывод и форматирование данных
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="shopping-cart"></span>
+								Products
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="users"></span>
+								Customers
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="bar-chart-2"></span>
+								Reports
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="layers"></span>
+								Integrations
+							</a>
+						</li>
+					</ul>
+
+					<h6
+						class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+						<span>Saved reports</span>
+						<a class="d-flex align-items-center text-muted" href="#">
+							<span data-feather="plus-circle"></span>
+						</a>
+					</h6>
+					<ul class="nav flex-column mb-2">
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Current month
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Last quarter
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Social engagement
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Year-end sale
+							</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+
+			<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+			<h2>План занятия:	</h2>
+		<ul>
+			<li>Группировка условий через логическое И и ИЛИ.</li>
+			<li>Вложенные условия. Многоуровневые условия.</li>
+			<li>Практикум и повторение пройденных материалов.</li>		
+		</ul>
+		
+		<h2>Группировка условий через логическое И и ИЛИ.</h2>
+		<p>Довольно часто возникает необходимость проверить сразу несколько условий. Например, нам нужно чтобы число было больше 5, но меньше 20. Решим эту задачу уже имеющимися знаниями:</p>
+
+		<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;locale.h&gt;
+int main()
+{
+	setlocale(LC_ALL,"Russian");
+	int x;
+	printf("введите число");
+	scanf("%d",&x);
+	if(x > 5)
+	{
+		if(x < 20)
+		{
+			printf("%d больше 5 и меньше 20/n",x);
+		}
+	}
+	return 0;
+}
+						</code>
+		</pre>
+		<p>У нас два условия и пришлось написать два блока if. А ведь условий может быть и 3 и более. Чтобы не писать такие сложные конструкции есть ещё два логических оператора, о которых вы пока не знаете. Это оператор &&(логическое И) и оператор ||(логическое ИЛИ).</p>
+
+		<p>В таблице показан принцип работы этих операторов</p>
+	
+		<p>
+			<table class="table table-striped">
+						<thead>
+							<tr>
+								<th></th>
+								<th>true<br>true</th>
+								<th>true<br>false</th>
+								<th>false<br>true</th>
+								<th>false<br>false</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>&&</td>
+								<td>true</td>
+								<td>false</td>
+								<td>false</td>
+								<td>false</td>
+							</tr>
+									<tr>
+								<td>||</td>
+								<td>true</td>
+								<td>true</td>
+								<td>true</td>
+								<td>false</td>
+							</tr>
+							
+						</tbody>
+					</table>
+		</p>
+		<p>Как видно из таблицы оператор && дает нам истинно, если оба выражения истинны, оператор || дает нам истинно, если истинно хотя бы одно из условий.</p>
+		<p><b>У оператора && приоритет выше, чем у ||.</b> Приоритет выше - значит оператор выполняется раньше. Это как в математике: приоритет у знаков * и / выше чем у + и -.</p>
+
+		<p>Изменим нашу задачу, используя полученные знания: </p>
+
+		<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;locale.h&gt;
+int main()
+{
+	setlocale(LC_ALL,"Russian");
+	int x;
+	printf("введите число");
+	scanf("%d",&x);
+	if(x > 5 && x < 20)
+	{
+			printf("%d больше 5 и меньше 20/n",x);
+	}
+	return 0;
+}
+						</code>
+		</pre>
+
+		<p>Используя операторы && и || можно записывать сложные условия, состоящие из нескольких выражений в один оператор if.</p>
+
+		<h2>Задачи</h2>
+		<ul>
+			<li>Напишите программу, которая запрашивает у пользователя номер месяца и затем выводит соответствующее название времени года.
+			<br>В случае, если пользователь введет недопустимое число, программа должна вывести сообщение "Ошибка ввода данных".</li>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample1"
+						aria-expanded="false" aria-controls="collapseExample">
+						Решение
+					</button>
+				</p>
+				<div class="collapse" id="collapseExample1">
+					<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;locale.h&gt;
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	int n;
+	printf("Введите номер месяца: ");
+	scanf("%d", &n);
+	if (n >= 2 && n <= 4)
+	{
+		printf("весна\n");
+	}
+	else
+	{
+		if (n >= 5 && n <= 7)
+		{
+			printf("лето\n");
+		}
+		else 
+		{
+			if (n >= 8 && n <= 10)
+			{
+				printf("осень\n");
+			}
+			else 
+			{
+				if (n == 11 || n == 12 || n == 1)
+				{
+					printf("зима\n");
+				}
+				else 
+				{
+					printf("Ошибка ввода данных\n");
+				}
+			}
+		}
+	}
+
+	return 0;
+}
+						</code>
+					</pre>
+				</div>
+<li>Написать программу, которая запрашивает у пользователя номер дня недели и выводит одно из сообщений: "Рабочий день","Суббота" или "Воскресенье". </li>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample2"
+						aria-expanded="false" aria-controls="collapseExample">
+						Решение
+					</button>
+				</p>
+				<div class="collapse" id="collapseExample2">
+					<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;locale.h&gt;
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	int n;
+	printf("Введите номер дня недели: ");
+	scanf("%d", &n);
+	if (n > 7 || n < 1)
+	{
+		printf("Ошибка ввода данных\n");	
+	}
+	else 
+	{
+		if (n == 6)
+		{
+			printf("суббота'\n");
+		}
+		else 
+		{
+			if (n == 7)
+			{
+				printf("воскресенье\n");
+			}
+			else
+			{
+				printf("рабочий день'\n");
+			}
+		}
+	}
+
+	return 0;
+}
+						</code>
+					</pre>
+				</div>
+<li>Ввести оценку от 1 до 10. Вывести: "плохо", если оценка ниже или равна 4, "нормально" для 5-6, "хорошо" для 7-8 , "отлично" - 9, "превосходно" - 10 </li>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample3"
+						aria-expanded="false" aria-controls="collapseExample">
+						Решение
+					</button>
+				</p>
+				<div class="collapse" id="collapseExample3">
+					<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;locale.h&gt;
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	int mark;
+	printf("Введите оценку: ");
+	scanf(“%d”, &mark);
+	if (mark >= 1 && mark <= 4)
+	{
+		printf("плохо");
+	}
+	else 
+	{
+		if (mark == 5 || mark == 6)
+		{
+			printf("нормально);
+		}
+		else 
+		{
+			if (mark == 7 || mark == 8)
+			{
+				printf("хорошо);
+			}
+			else
+			{
+			 if (mark == 9)
+			{
+				printf("отлично");
+			}
+			else
+			{
+				printf("превосходно");
+			}
+		}
+	}
+	return 0;
+}
+						</code>
+					</pre>
+				</div>				
+<li>Дракон отращивает по 3 головы каждый год, но после того, как ему исполнится 100 лет - только по 2. сколько голов будет у дракона через n лет</li>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample4"
+						aria-expanded="false" aria-controls="collapseExample">
+						Решение
+					</button>
+				</p>
+				<div class="collapse" id="collapseExample4">
+					<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;locale.h&gt;
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	int n;
+	printf("Введите количество лет: ");
+	scanf("%d", &n);
+	int heads = 0;
+	if (n <= 100)
+	{
+		heads = n * 3;
+	}
+	else 
+	{
+		heads = 100 * 3;
+		heads += (n - 100) * 2
+	} 
+	printf("heads count = %d\n", heads);
+	return 0;
+}
+						</code>
+					</pre>
+				</div>	
+		</ul>
+			</main>
+	
+</body>
+
+</html>

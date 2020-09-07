@@ -1,0 +1,377 @@
+<!doctype html>
+<html>
+
+<head>
+	<link rel="stylesheet" href="./css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+	</script>
+
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+	<script src="../js/bootstrap.bundle.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+
+	<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+	<meta charset="utf-8">
+	<title>Рекурсивные функции. Указатели. Отправка массивов в функции.</title>
+</head>
+
+<body>
+	<header>
+		<nav class="navbar navbar-dark static-top navbar-expand-md navbar-dark bg-dark shadow-md">
+			<a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">IT_CLUB</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04"
+				aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarsExample04">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Link</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false">Dropdown</a>
+						<div class="dropdown-menu" aria-labelledby="dropdown04">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+						</div>
+					</li>
+				</ul>
+				<form class="form-inline my-2 my-md-0">
+					<input class="form-control" type="text" placeholder="Search">
+				</form>
+			</div>
+		</nav>
+
+	</header>
+
+	<div class="container-fluid">
+		<div class="row">
+			<nav class="col-md-2 d-none d-md-block bg-light sidebar">
+				<div class="sidebar-sticky">
+					<ul class="nav flex-column">
+						<li class="nav-item">
+							<a class="nav-link active" href="#">
+								<span data-feather="home"></span>
+								Введение в язык <span class="sr-only">(current)</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Типы данных. Вывод и форматирование данных
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="shopping-cart"></span>
+								Products
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="users"></span>
+								Customers
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="bar-chart-2"></span>
+								Reports
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="layers"></span>
+								Integrations
+							</a>
+						</li>
+					</ul>
+
+					<h6
+						class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+						<span>Saved reports</span>
+						<a class="d-flex align-items-center text-muted" href="#">
+							<span data-feather="plus-circle"></span>
+						</a>
+					</h6>
+					<ul class="nav flex-column mb-2">
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Current month
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Last quarter
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Social engagement
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Year-end sale
+							</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+
+			<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+			<h2>План занятия:</h2>
+		<ul>
+			<li>Рекурсивные функции и их применение.</li>
+			<li>Введение в указатели.</li>
+			<li>Как отправить массив в качестве аргумента?</li>
+			<li>Практикум.</li>		
+		</ul>
+		<h2>Рекурсивные функции и их применение.</h2>
+		<p><b>Рекурсивная функция</b> - это функция, которая вызывает сама себя.</p>
+		<p>Простым примером применения рекурсии является функция factorial(), вычисляющая факториал целого числа. Факториалом числа n является произведение чисел от 1 до n. Например, факториал 3 равен 1*2*3 или 6.</p>
+		 <pre class="prettyprint">
+						<code>
+//рекурсивная функция
+int factorial(int n) 
+{
+	int answer;
+	if(n==1)
+	{ 
+		return 1;  //в случае если n=1
+	}
+	answer = factorial(n-1)*n; //рекурсивный вызов функции с параметром n-1
+	return answer;
+}
+
+//нерекурсивная функция
+int fact (int n)   
+{
+	int answer = 1;
+	for(int t=1; t<=n; t++)
+	{
+		answer = answer * t;
+	}
+	return answer;
+}
+</code>
+	</pre>
+
+
+	<p>Работа нерекурсивной функции кажется очевидной. Циклом перемножаются все числа от 1 до n.</p>
+	<p>Действие рекурсивной функции factorial() немного сложнее. Когда factrorial() вызывается с аргументом 1, функция возвращает 1, во всех остальных случаях она возвращает произведение factorial(n- 1) * n. Для вычисления этого значения factorial() вызывается с  параметром n-1. Это происходит, пока n не станет равно 1.
+	</p>
+	<p>При вычислении факториала числа 2, первый вызов factorial() приводит ко второму вызову с аргументом 1. Данный вызов возвращает 1, после чего результат умножается на 2 (исходное значение n). Ответ, таким образом, будет 2. Можно попробовать вставить printf() в factorial() для демонстрации уровней и промежуточных ответов каждого вызова.</p>
+	<p>При работе с рекурсией нужно быть осторожным и предусмотреть условие выхода из функции, иначе получим бесконечную рекурсию, ситуация так же опасна как и бесконечный цикл.</p>
+	<p>Когда функция вызывает сама себя, в стеке выделяется место для новых локальных переменных. Код функции работает с данными переменными. Рекурсивный вызов не создает новую копию функции, новыми являются только аргументы.</p>
+	<p>Рекурсивные версии большинства подпрограмм могут выполняться немного медленнее, чем их варианты с циклом, поскольку к необходимым действиям добавляются вызовы функций. Но в большинстве случаев это не имеет значения. Много рекурсивных вызовов в функции может привести к переполнению стека. Поскольку местом для хранения параметров и локальных переменных функции является стек и каждый новый вызов создает новую копию переменных, пространство стека может исчерпаться. Если это произойдет, то возникнет ошибка - переполнение стека.<br> Основным преимуществом применения рекурсивных функций является написание более простого кода.</p>
+	<p><b>Если вы не до конца понимаете принцип работы рекурсивной функции лучше воспользуйтесь обычным циклом.</b></p>
+	
+	<h2>Введение в указатели.</h2>
+	<p><b>Указатель</b> - это переменная, которая хранит адрес другой переменной.</p>
+	<p>В таблице приведено сравнение обычной переменной и указателя.</p>
+	<p>
+			<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>Название</th>
+								<th>Объявление</th>
+								<th>Инициализация</th>
+								<th>Значение</th>
+								<th>Адрес</th>
+								<th>Вывод значения</th>
+								<th>Вывод адреса</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>переменная</td>
+								<td>int x;</td>
+								<td>x = 10;</td>
+								<td>x</td>
+								<td>&x</td>
+								<td>printf("%d", x);</td>
+								<td>printf("%d", &x);</td>
+							</tr>
+							<tr>
+								<td>указатель</td>
+								<td>int* y;</td>
+								<td>y = &x;</td>
+								<td>*y</td>
+								<td>y</td>
+								<td>printf("%d", *y);</td>
+								<td>printf("%d", y);</td>
+							</tr>
+						</tbody>
+					</table>
+		</p>
+	<p>При объявлении указателя ставится символ *, если несколько указателей объявляются в одной строке, то * ставится перед каждым названием.</p>
+ <pre class="prettyprint"><code>
+ 	int *a,b,c; //указатель только переменная a, b и c обычные переменные
+ 	int *a, *b, *c; //три указателя
+</code>
+	</pre>
+
+<p><b>Зачем же нужны указатели?</b></p>
+<p>
+	<ul>
+		<li>Указатель даёт нам прямой доступ к адресу переменной. Если по адресу мы изменим значение, то и в переменной оно изменится.</li>
+		<li>Через указатели мы можем менять значения в переменных, переданных в функцию.</li>
+		<li>Указатели позволяют сохранить сразу несколько результатов в одной функции.</li>
+	</ul>
+</p>
+<p>Рассмотрим пример</p>
+	 <pre class="prettyprint">
+						<code>
+void set (int x)
+{
+	x=100;
+}
+
+int main()
+{
+	int x=10;
+	set(x);
+	printf("x = %d", x);
+}
+</code>
+	</pre>
+<p>В результате работы данной программы будет выведено x = 10, т.к. x в функции set и x в функции main, это две разные переменные. И изменить значение в x из main таким образом мы не можем.</p>
+<p>Воспользуемся указателем.</p>
+	 <pre class="prettyprint">
+						<code>
+void set (int* x) //передаем указатель в функцию
+{
+	*x=100; //меняем значение через указатель
+}
+
+int main()
+{
+	int x=10;
+	set(&x); //передаем адрес
+	printf("x = %d", x);
+}
+</code>
+	</pre>
+	<p>В данном случае значение изменилось.</p>
+	<p>Получим сразу 4 результата в одной функции.</p>
+		 <pre class="prettyprint">
+						<code>
+void function (int a, int b, int* sum, int* raz, int* umn, double* del) //передаем в функцию 2 переменные и 4 указателя
+{
+	*sum = a + b;
+	*raz = a - b;
+	*umn = a * b;
+	*del = (double)a / b;
+}
+
+int main()
+{
+	int a=5, b=10;
+	int s, r, u, d;
+	function(a, b, &s, &r, &u, &d);
+	printf("sum = %d\n", s);
+	printf("raz = %d\n", r);
+	printf("umn = %d\n", u);
+	printf("del = %d\n", d);
+}
+</code>
+	</pre>
+
+	<h2>Как отправить массив в качестве аргумента?</h2>
+	<p>Как вы помните, массив - это несколько переменных одного типа идущих последовательно. Зная адресс нулевого элемента массива можно обратиться к любому элементу. т.к. они расположены последовательно. При необходимости передать массив в функции используется указатель.</p>
+ <pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;time.h&gt;
+void printArray(int* arr,int size) //массив передается через указатель
+{
+	for(int i=0; i&lt;size; i++)
+	{
+		printf("mas[%d]=%d\n",i,arr[i]); //в функции обращение к элементам массива происходит как обычно, * не нужна
+	}
+}
+
+void randomArray(int* arr,int size) //массив передается через указатель, поэтому возвращать заполненный массив не нужно
+{
+	srand(time(NULL));
+	for(int i=0; i&lt;size; i++)
+	{
+		arr[i] = rand() % 50;
+	}
+}
+int main()
+{
+	int mas[10];
+	randomArray(mas, 10);
+	printArray(mas, 10);
+	return 0;
+}
+
+</code>
+	</pre>
+
+		<h2>Задачи</h2>
+		<ul>
+			<li>Функция принимает два числа, находит НОД и НОК.</li>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample1"
+						aria-expanded="false" aria-controls="collapseExample">
+						Решение
+					</button>
+				</p>
+				<div class="collapse" id="collapseExample1">
+					<pre class="prettyprint">
+						<code>
+	#define _CRT_SECURE_NO_WARNINGS
+	#include &lt;stdio.h&gt;
+
+	 void nodAndNok(int a, int b, int* nod, int* nok)
+	{
+		for(int i=a; i>=1; i--)
+		{
+			if(a%i==0 && b%i==0)
+			{
+				nod = i;
+				break;
+			}
+		}
+		*nok = a*b / *nod;
+	}
+
+	void main()
+	{
+		int a=10, b=15, nod, nok;
+		nodAndNok(a, b, &nod, &nok)
+		printf("nod = %d\n",nod);
+		printf("nok = %d\n",nok);
+	}
+						</code>
+					</pre>
+				</div>
+			
+	
+		</ul>
+
+			</main>
+	
+</body>
+
+</html>

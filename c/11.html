@@ -1,0 +1,327 @@
+<!doctype html>
+<html>
+
+<head>
+	<link rel="stylesheet" href="./css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+	</script>
+
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+	<script src="../js/bootstrap.bundle.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	
+	<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+	<meta charset="utf-8">
+	<title>Генерация случайных чисел</title>
+</head>
+
+<body>
+	<header>
+		<nav class="navbar navbar-dark static-top navbar-expand-md navbar-dark bg-dark shadow-md">
+			<a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">IT_CLUB</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04"
+				aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarsExample04">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Link</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false">Dropdown</a>
+						<div class="dropdown-menu" aria-labelledby="dropdown04">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+						</div>
+					</li>
+				</ul>
+				<form class="form-inline my-2 my-md-0">
+					<input class="form-control" type="text" placeholder="Search">
+				</form>
+			</div>
+		</nav>
+
+	</header>
+
+	<div class="container-fluid">
+		<div class="row">
+			<nav class="col-md-2 d-none d-md-block bg-light sidebar">
+				<div class="sidebar-sticky">
+					<ul class="nav flex-column">
+						<li class="nav-item">
+							<a class="nav-link active" href="#">
+								<span data-feather="home"></span>
+								Введение в язык <span class="sr-only">(current)</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Типы данных. Вывод и форматирование данных
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="shopping-cart"></span>
+								Products
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="users"></span>
+								Customers
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="bar-chart-2"></span>
+								Reports
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="layers"></span>
+								Integrations
+							</a>
+						</li>
+					</ul>
+
+					<h6
+						class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+						<span>Saved reports</span>
+						<a class="d-flex align-items-center text-muted" href="#">
+							<span data-feather="plus-circle"></span>
+						</a>
+					</h6>
+					<ul class="nav flex-column mb-2">
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Current month
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Last quarter
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Social engagement
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Year-end sale
+							</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+
+			<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+			<h2>План занятия:	</h2>
+		<ul>
+			<li>Актуальность проблемы генерации случайных и псевдослучайных последовательностей.</li>
+			<li>Ввод, вывод массивов.</li>
+			<li>Решение частых задач с массивами - поиск элементов, обработка данных, изменение элементов массивов.</li>
+			<li>Практикум.</li>		
+		</ul>
+		
+		<h2>Актуальность проблемы генерации случайных и псевдослучайных последовательностей.</h2>
+		<p>Генерация псевдослучайных чисел – это сложная математическая задача. Задача генерации случайных чисел на классическом процессоре не может быть решена, так как работа компьютера детерминирована по определению. Тем не менее, можно сгенерировать очень длинные наборы чисел такие, что будут иметь те же свойства, что и наборы истинно случайных чисел. Случайными числами  мы будем называть псевдослучайные числа.</p>
+		<p>Для генерации случайных чисел используется функция <b>rand</b>. Данная функция находится в библиотеке <b>stdlib.h</b>.</p>
+
+<pre class="prettyprint">
+						<code>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt; //библиотека для генерации случайных чисел
+ 
+int main()
+{
+	int r;
+	for (int i = 0; i < 10; i++)
+	{
+		r = rand();  //генерация случайного числа       
+		printf("%d\n", r);
+	}
+	return 0;
+}
+
+						</code>
+	</pre>
+<p>Если несколько раз запустить данную программу, то вы заметите, что все время генерируются одни и те же числа.</p>
+<p>Чтобы были различные числа, необходимо инициализировать генератор случайных чисел (ГСЧ, или RNG - random number generator), задать зерно – seed, на основе которого в дальнейшем будет происходить генерация. Важно, что для одного и того же начального значения генератор будет возвращать одни и те же числа. Инициализируется генератор случайных чисел функцией <b>srand</b>.</p>
+
+<pre class="prettyprint">
+						<code>
+srand(42);
+						</code>
+	</pre>
+
+<p>Присваиваем переменной r случайное число </p>
+
+<pre class="prettyprint">
+						<code>
+r = rand();
+</code>
+	</pre>
+
+<p>Значение будет лежать в диапазоне от 0 до RAND_MAX.<br>
+Если необходимо сгенерировать число в промежутке от a до b
+</p>
+
+<pre class="prettyprint">
+						<code>
+r = rand()%(b-a+1) +a;
+</code>
+	</pre>
+
+<p>Для того, чтобы при следующем запуске получить новый набор чисел, нужно инициализировать генератор каждый раз разными значениями. Например, можно использовать системное время - функция time. Данная функция находится в библиотеке <b>time.h</b>.</p>
+<pre class="prettyprint">
+						<code>
+srand(time(NULL)); //используется текущее время в милисекундах
+</code>
+	</pre>
+
+<h2>Заполнение массивов случайными числами.</h2>
+ <p>Следующая программа заполняет целочисленный массив случайными числами и выводит его:</p>
+ <pre class="prettyprint">
+						<code>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;time.h&gt;
+int main()
+{
+	const int n=10;
+	int mas[n];
+	srand(time(NULL));
+	for (int i = 0; i < n; i++) 
+	{
+		mas[i]= rand()%100;
+		printf("%d\t", mas[i]);
+	}
+	return 0;
+}
+
+</code>
+	</pre>
+
+<h2>Проект “Угадай число!”.</h2>
+	<p>Программа загадывает число, а пользователь должен его угадать. Программа подсказывает больше или меньше введенное число загаданного.</p>
+ <pre class="prettyprint">
+						<code>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;time.h&gt;
+int main()
+{
+	
+}
+
+</code>
+	</pre>
+
+
+		<h2>Задачи</h2>
+		<ul>
+			<li>Создать массив, заполнить случайными числами, удалить в массиве все числа, которые повторяются более двух раз.
+			</li>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample1"
+						aria-expanded="false" aria-controls="collapseExample">
+						Решение
+					</button>
+				</p>
+				<div class="collapse" id="collapseExample1">
+					<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;time.h&gt;
+int main()
+{
+	int a[10];
+	int n = 10;
+	int count = 0;
+	srand(time(NULL));
+	for (int i = 0; i < n; i++)
+	{
+		a[i] = rand() % 20;
+		printf("%d\t", a[i]);
+	}
+	printf("\n");
+
+	for (int i = 0; i < n; i++)
+	{
+		count = 1;
+
+		for (int j = i + 1; j < n; j++)
+		{
+			if (a[j] == a[i])
+			{
+				count++;
+			}
+		}
+
+		if (count > 2)
+		{
+			int one = a[i];
+			for (int j = i; j < n; j++)
+			{
+				if (a[j] == one)
+				{
+					// удаляем
+					for (int k = j + 1; k < n; k++)
+					{
+						a[k - 1] = a[k];
+					}
+					n--;
+					j--;
+				}
+			}
+			i--;
+		}
+	}
+	if (n == 0)
+	{
+		printf("empty array\n");
+	}
+	else
+	{
+		for (int p = 0; p < n; p++)
+		{
+			printf("%d\t",a[p]);
+		}
+	}
+	printf("\n");
+
+	
+	return 0;
+}
+						</code>
+					</pre>
+				</div>
+		
+		</ul>
+			</main>
+	
+</body>
+
+</html>

@@ -1,0 +1,711 @@
+<!doctype html>
+<html>
+
+<head>
+	<link rel="stylesheet" href="./css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+	</script>
+
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+	<script src="../js/bootstrap.bundle.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	
+	<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+	<meta charset="utf-8">
+	<title>Операторы ветвления</title>
+</head>
+
+<body>
+	<header>
+		<nav class="navbar navbar-dark static-top navbar-expand-md navbar-dark bg-dark shadow-md">
+			<a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">IT_CLUB</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04"
+				aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarsExample04">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Link</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false">Dropdown</a>
+						<div class="dropdown-menu" aria-labelledby="dropdown04">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+						</div>
+					</li>
+				</ul>
+				<form class="form-inline my-2 my-md-0">
+					<input class="form-control" type="text" placeholder="Search">
+				</form>
+			</div>
+		</nav>
+
+	</header>
+
+	<div class="container-fluid">
+		<div class="row">
+			<nav class="col-md-2 d-none d-md-block bg-light sidebar">
+				<div class="sidebar-sticky">
+					<ul class="nav flex-column">
+						<li class="nav-item">
+							<a class="nav-link active" href="#">
+								<span data-feather="home"></span>
+								Введение в язык <span class="sr-only">(current)</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Типы данных. Вывод и форматирование данных
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="shopping-cart"></span>
+								Products
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="users"></span>
+								Customers
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="bar-chart-2"></span>
+								Reports
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="layers"></span>
+								Integrations
+							</a>
+						</li>
+					</ul>
+
+					<h6
+						class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+						<span>Saved reports</span>
+						<a class="d-flex align-items-center text-muted" href="#">
+							<span data-feather="plus-circle"></span>
+						</a>
+					</h6>
+					<ul class="nav flex-column mb-2">
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Current month
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Last quarter
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Social engagement
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Year-end sale
+							</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+
+			<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+			<h2>План занятия:	</h2>
+		<ul>
+			<li>Обзор условий. Понятие истинного и ложного условия</li>
+			<li>Оператор if</li>
+			<li>Связка if-else</li>
+			<li>Логические операторы</li>
+			<li>Практикум</li>		
+		</ul>
+		
+		<h2>Обзор условий. Понятие истинного и ложного условия</h2>
+		<p>Довольно часто на поставленный вопрос человек получает ответ «да» или «нет». В зависимости от ответа он определяет свои действия и выполняет одну или другую команду (группу команд). <br>Роботы и другие технические устройства тоже могут выполнять различные действия в зависимости от условия. Если условие истинно (на вопрос получен ответ "Да"), то выполняются одни действия, если ложно(ответ "Нет"), то другие.</p>
+		<p>Алгоритмическая конструкция ветвление обеспечивает выполнение одной или другой последовательности команд в зависимости от истинности или ложности некоторого условия.</p>
+		<p><b>Рассмотрим пример:</b> есть две переменные <code class="prettyprint">a=2, b=3 </code>, сравним их:
+		<br>1. <code class="prettyprint"> a < b </code> Действительно a меньше b, т.е. получили ответ "Да" - выражение <b>истинно</b>. В программировании обозначется ключевым словом <b>true</b> 
+		<br>1. <code class="prettyprint"> a < b </code> В даннос случае a  не меньше b, т.е. получили ответ "Нет" - выражение <b>ложно</b>. В программировании обозначется ключевым словом <b>false</b> 
+	</p>
+
+		<h2>Оператор if</h2>
+		<p>Основной конструкцией ветвления в языке Си является оператор <b>if</b></p>
+		<p><b>Блок-схема оператора if</b></p>
+		<p><img src="img/img5_1.jpg"  width="684" height="600"></p>
+
+		<p>Принцип работы: <br><b>сначала проверяется уловие, если условие истинно (true), то операторы(какой-то код) выполняются, если условие ложно(false), то операторы пропускаются.</b></p>
+		<p>Общий вид:</p>
+		<pre class="prettyprint">
+						<code>
+if(условие)
+{
+	операторы; //  если здесь будет одна строчка кода, то фигурные скобки {} можно не ставить.
+} 
+		</code>
+		</pre>
+		<p>Если в качестве операторов будет только одна строчка кода, то допустимо не ставить фигурные скобки{}.<br><b>Для лучшей читаемости кода необходимо ставить фигурные скобки ВСЕГДА!!!</b></p>
+		<p>Пример: проверка является ли число положительным</p>
+		<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;locale.h&gt;
+int main()
+{
+	setlocale(LC_ALL,"Russian");
+	int x;
+	printf("введите число");
+	scanf("%d",&x);
+	if( x > 0)
+	{
+		printf("%d положительное число/n",x);
+	}
+	return 0;
+}
+						</code>
+		</pre>
+		<p>Если будет введено положительное число, например 5, то получим вывод: 5 положительное число, если же будет введено отрицательное число, то ничего не выведется.<br>Изменим код программы так, чтобы выводился результат при любом введенном числе.</p>
+		<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;locale.h&gt;
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	int x;
+	printf("введите число");
+	scanf("%d",&x);
+	if( x > 0)
+	{
+		printf("%d положительное число/n",x);
+	}
+	if( x < 0)
+	{
+		printf("%d отрицательное число/n",x);
+	}
+	if( x == 0)
+	{
+		printf("введен ноль/n");
+	}
+	return 0;
+}
+						</code>
+		</pre>
+		<p>Программа рабочая, но данное решение не самое лучшее, а без связки <b>if-else</b> по-другому не сделаешь!</p>
+		
+		<p></p>
+
+		<h2>Связка if-else</h2>
+		<p><b>Блок-схема оператора if-else</b></p>
+		<p><img src="img/img5_2.jpg"  width="684" height="600"></p>
+
+		<p>Принцип работы: <br><b>сначала проверяется уловие, если условие истинно (true), то выполняются операторы1, если условие ложно(false), то выполняются операторы2.</b></p>
+		<p>Общий вид:</p>
+		<pre class="prettyprint">
+						<code>
+if(условие)
+{
+	операторы1; // выполняются, если условие истинно
+} 
+else
+{
+	операторы2; //выполняются, если условие ложно
+}
+		</code>
+		</pre>
+
+<p><b>Всегда, когда это возможно, несколько операторов if необходимо заменять на if-else.</b></p>
+<p>Проверим положительное или отрицательное число введено при помощи связки if-else.</p>
+
+<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;locale.h&gt;
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	int x;
+	printf("введите число");
+	scanf("%d",&x);
+	if( x > 0)
+	{
+		printf("%d положительное число/n",x); //выполняется, если условие истинно
+	}
+	else
+	{
+		printf("%d отрицательное число/n",x); //выполняется, если условие ложно
+	}
+	return 0;
+}
+</code>
+
+</pre>
+
+<p>Подумайте, что выведет программа, если ввести 0?</p>
+
+<p>Изменим программу для правильной работы при любом введенном числе:</p>
+
+<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;locale.h&gt;
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	int x;
+	printf("введите число");
+	scanf("%d",&x);
+	if( x > 0)
+	{
+		printf("%d положительное число/n",x); //выполняется, если первое условие истинно
+	}
+	else //переходим в else, если первое условие не верно
+	{
+			if( x < 0)
+			{
+				printf("%d отрицательное число/n",x); //выполняется, если второе условие истинно
+			}
+			else
+			{
+				printf("введен ноль/n"); //выполняется, если второе условие ложно
+			}
+	}
+	return 0;
+}
+</code>
+
+</pre>
+
+<p>Может показаться, что конструкция с двумя блоками if-else сложнее, чем три независящих друг от друга блока if, но код с if-else будет работать быстрее. В лучшем случае в программе с if-else выполнится одна логическая проверка, в худшем - дву,  в коде же с операторами if всегда три  проверка. Любая логическая проверка затратна по времени.<br>При написании любой программы всгда нужно учитывать быстродействие и затраты оперативной памяти. Необходимо стремиться к повышению быстродействия (например, заменяя if на if-else) и к сокращению затрат оперативной памяти(например, не создавать лишние переменные).</p>
+
+ <h2>Логические операторы</h2>
+
+		<p>При записи логическим выпожений всегда используется один из логических операторов.</p>
+
+		<p><br><b>Логические операторы</b></p>
+		<p>
+			<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>Знак</th>
+								<th>Название</th>
+								<th>Описание</th>
+								<th>Пример</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>&gt</td>
+								<td>больше</td>
+								<td>возвращает true, если число слева, больше чем справа, иначе - false</td>
+								<td>a&gtb</td>
+							</tr>
+							<tr>
+								<td>&lt</td>
+								<td>меньше</td>
+								<td>возвращает true, если число слева, меньше чем справа, иначе - false</td>
+								<td>a&ltb</td>
+							</tr>
+							<tr>
+								<td>&gt=</td>
+								<td>больше либо равно</td>
+								<td>возвращает true, если число слева, больше либо равно чем справа, иначе - false</td>
+								<td>a&gt=b</td>
+							</tr>
+							<tr>
+								<td>&lt=</td>
+								<td>меньше либо равно</td>
+								<td>возвращает true, если число слева, меньше либо равно чем справа, иначе - false</td>
+								<td>a&lt=b</td>
+							</tr>
+							<tr>
+								<td>==</td>
+								<td>проверка на равенство</td>
+								<td>возвращает true, если числа равны, иначе - false</td>
+								<td>a==b</td>
+							</tr>
+							<tr>
+								<td>!=</td>
+								<td>проверка на не равенство</td>
+								<td>возвращает true, если числа не равны, иначе - false</td>
+								<td>a!=b</td>
+							</tr>
+						</tbody>
+					</table>
+		</p>
+
+		<h2>Задачи</h2>
+		<ul>
+			<li>Проверка числа на четность.</li>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample1"
+						aria-expanded="false" aria-controls="collapseExample">
+						Решение
+					</button>
+				</p>
+				<div class="collapse" id="collapseExample1">
+					<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;locale.h&gt;
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	int x;
+	printf("Введите число: \n");
+	scanf("%d", &x);
+	if( x == 0 )
+	{
+		printf("%d ни четное, ни нечетное число/n",x); //выполняется, если первое условие истинно
+	}
+	else //переходим в else, если первое условие не верно
+	{
+			if( x % 2 == 0)
+			{
+				printf("%d четное число/n",x); //выполняется, если второе условие истинно
+			}
+			else
+			{
+				printf("%d нечетное число/n",x); //выполняется, если второе условие ложно
+			}
+	}
+	return 0;
+}
+						</code>
+					</pre>
+				</div>
+<li>Проверка возраста</li>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample2"
+						aria-expanded="false" aria-controls="collapseExample">
+						Решение
+					</button>
+				</p>
+				<div class="collapse" id="collapseExample2">
+					<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;locale.h&gt;
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	int age;
+	printf("Введите возраст: ");
+	scanf("%d", &age);
+
+	if (age >= 18) 
+	{
+		printf("Продано!\n");
+	} else 
+	{
+		printf("Не продано!\n");
+	}
+
+	return 0;
+}
+						</code>
+					</pre>
+				</div>
+
+<li>Присвоить переменной c наибольшее из 2 значений</li>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample3"
+						aria-expanded="false" aria-controls="collapseExample">
+						Решение
+					</button>
+				</p>
+				<div class="collapse" id="collapseExample3">
+					<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;locale.h&gt;
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	int a, b, c;
+	printf("Введите a ");
+	scanf("%d", &a);
+	printf("Введите b ");
+	scanf("%d", &b);
+	if (a > b) 
+	{
+		c = a;
+	} else 
+	{
+		c = b;
+	}
+	printf("c = %d\n", c);
+	return 0;
+}
+						</code>
+					</pre>
+				</div>
+<li>Ввести число, если оно больше 60, то вывести на экран 'зачтено' и в любых других случиях вывести 'aaa'</li>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample4"
+						aria-expanded="false" aria-controls="collapseExample">
+						Решение
+					</button>
+				</p>
+				<div class="collapse" id="collapseExample4">
+					<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;locale.h&gt;
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	int a;
+	printf("a = ");
+	scanf("%d", &a);
+
+	if (a > 60) 
+	{
+		printf("зачтено\n");
+	}
+	else 
+	{
+		printf("aaa\n");
+	}
+	return 0;
+}
+						</code>
+					</pre>
+				</div>	
+
+<li>Ввести 2 числа и сравнить их. Т.е. вывести 5<6, 7>-12, 4=4</li>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample5"
+						aria-expanded="false" aria-controls="collapseExample">
+						Решение
+					</button>
+				</p>
+				<div class="collapse" id="collapseExample5">
+					<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;locale.h&gt;
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	int a, b;
+	printf("Введите два числа: ");
+	scanf("%d", &a);
+	scanf("%d", &b);
+
+	if (a > b) 
+	{
+		printf("%d > %d", a, b);
+	} 
+	else  
+	{
+		if (a == b) 
+		{
+			printf("%d = %d", a, b);
+		}
+		else 
+		{
+			printf("%d < %d", a, b);
+		}
+	}
+	return 0;
+}
+						</code>
+					</pre>
+				</div>			
+<li>Ввести 3 числа, определить наибольшее из них</li>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample6"
+						aria-expanded="false" aria-controls="collapseExample">
+						Решение
+					</button>
+				</p>
+				<div class="collapse" id="collapseExample6">
+					<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;locale.h&gt;
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	int a, b, c;
+	printf("Введите 3 числа: ");
+	scanf("%d", &a);
+	scanf("%d", &b);
+	scanf("%d", &c);
+	if (a > b) 
+	{
+		if (a > c) 
+		{
+			printf("max = %d\n", a);
+		}
+		else 
+		{
+			// c > a; c > b
+			printf("max = %d\n", c);
+		}
+	}
+	else 
+	{
+		// b > a
+		if (b > c) 
+		{
+			printf("max = %d\n", b);
+		}
+		else 
+		{
+			printf("max = %d\n", c);
+		}
+	}
+
+	return 0;
+}
+						</code>
+					</pre>
+				</div>	
+<li>Написать программу, которая проверяет, делится ли на три введенное с клавиатуры целое число</li>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample7"
+						aria-expanded="false" aria-controls="collapseExample">
+						Решение
+					</button>
+				</p>
+				<div class="collapse" id="collapseExample7">
+					<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;locale.h&gt;
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	int number;
+	printf("Введите число: ");
+	scanf("%d", &n);
+	if (n % 3 == 0)
+	{
+		printf("%d делится на три\n");
+	}
+	else 
+	{
+		printf("%d не делится на три\n");
+	}
+	return 0;
+}
+						</code>
+					</pre>
+				</div>		
+<li>Ввести два числа, проверить делится ли первое на второе. Проверить ошибку деления на ноль</li>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample8"
+						aria-expanded="false" aria-controls="collapseExample">
+						Решение
+					</button>
+				</p>
+				<div class="collapse" id="collapseExample8">
+					<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;locale.h&gt;
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	int a, b;
+	printf("Введите число: ");
+	scanf("%d", &a);
+	printf("Введите число: ");
+	scanf("%d", &b);
+	if (b == 0)
+	{
+		printf("Делить на ноль нельзя\n");
+	}
+	else 
+	{
+		if(a % b == 0)
+		{
+			printf("%d делится %d\n");
+		}
+		else
+		{
+			printf("%d не делится %d\n");
+		}
+	}
+	return 0;
+}
+						</code>
+					</pre>
+				</div>					
+<li>Ввести двузначное число, проверить какая из его цифр больше</li>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample9"
+						aria-expanded="false" aria-controls="collapseExample">
+						Решение
+					</button>
+				</p>
+				<div class="collapse" id="collapseExample9">
+					<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;locale.h&gt;
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	int n;
+	printf("Введите число: ");
+	scanf("%d", &n);
+	int first = n / 10;
+	int second = n % 10;
+	if (first > second)
+	{
+		printf("%d > %d\n", first, second);	
+	}
+	else 
+	{
+		printf("%d > %d\n", second, first);
+	}
+	return 0;
+}
+						</code>
+					</pre>
+				</div>																																			
+ 		</ul>
+			</main>
+	
+</body>
+
+</html>

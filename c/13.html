@@ -1,0 +1,519 @@
+<!doctype html>
+<html>
+
+<head>
+	<link rel="stylesheet" href="./css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+	</script>
+
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+	<script src="../js/bootstrap.bundle.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+
+	<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+	<meta charset="utf-8">
+	<title>Многомерные массивы.</title>
+</head>
+
+<body>
+	<header>
+		<nav class="navbar navbar-dark static-top navbar-expand-md navbar-dark bg-dark shadow-md">
+			<a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">IT_CLUB</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04"
+				aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarsExample04">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Link</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false">Dropdown</a>
+						<div class="dropdown-menu" aria-labelledby="dropdown04">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+						</div>
+					</li>
+				</ul>
+				<form class="form-inline my-2 my-md-0">
+					<input class="form-control" type="text" placeholder="Search">
+				</form>
+			</div>
+		</nav>
+
+	</header>
+
+	<div class="container-fluid">
+		<div class="row">
+			<nav class="col-md-2 d-none d-md-block bg-light sidebar">
+				<div class="sidebar-sticky">
+					<ul class="nav flex-column">
+						<li class="nav-item">
+							<a class="nav-link active" href="#">
+								<span data-feather="home"></span>
+								Введение в язык <span class="sr-only">(current)</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Типы данных. Вывод и форматирование данных
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="shopping-cart"></span>
+								Products
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="users"></span>
+								Customers
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="bar-chart-2"></span>
+								Reports
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="layers"></span>
+								Integrations
+							</a>
+						</li>
+					</ul>
+
+					<h6
+						class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+						<span>Saved reports</span>
+						<a class="d-flex align-items-center text-muted" href="#">
+							<span data-feather="plus-circle"></span>
+						</a>
+					</h6>
+					<ul class="nav flex-column mb-2">
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Current month
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Last quarter
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Social engagement
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span data-feather="file-text"></span>
+								Year-end sale
+							</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+
+			<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+			<h2>План занятия:	</h2>
+		<ul>
+			<li>Двумерные и n-мерные массивы.</li>
+			<li>Практикум.</li>		
+		</ul>
+		
+		<h2>Двумерные и n-мерные массивы.</h2>
+		<p><b>Двумерный массив</b> - это массив состоящий из одномерных массивов. У каждого элемента двумерного массива есть две координаты - номер строчки(i) и номер столбца(j).</p>
+		
+		<h3>Создание массива</h3>
+		<p>Стандартный вид объявления двумерного массива следующий:</p>
+<pre class="prettyprint">
+						<code>
+тип имя_переменной [количество строк][количество столбцов];
+						</code>
+	</pre>
+
+<p>При создании двумерного массива необходимо указать количество строк и количество столбцов.
+</p> 
+<p>Пример объявления двумерного массива: </p>
+<pre class="prettyprint">
+						<code>
+const int row = 10;
+const int column = 5;
+int mas[row][column]; 
+</code>
+	</pre>
+
+<img src="img/img13_1.jpg"  width="565" height="246">
+<p>Чтобы обратиться к одному элементу массива необходимо указать номер строчки и номер столбца. Нумерация, как и в одномерном массиве, с нуля.</p>
+
+<h2>Ввод, вывод двумерного массива.</h2>
+ <p>Следующая программа заполняет целочисленный массив случайными числами и выводит его:</p>
+ <pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;time.h&gt;
+int main()
+{
+	const int row = 10;   //количество строк в массиве
+	const int column = 5; //количество столбцов в массиве
+	int mas[row][column]; //создаем массив на 10 строк и 5 столбцов
+	srand(time(NULL));
+	//заполнение двумерного массива 
+	for (int i = 0; i < row; i++) //цикл переберающий строки
+	{
+		for (int j = 0; j < column; j++) //цикл перебирающий столбцы
+		{
+			mas[i][j]=rand()%100; //заполнение случайными числами
+		}
+	}
+
+	//вывод массива
+	for (int i = 0; i < row; i++)
+	{
+		for (int j = 0; j < column; j++)
+		{
+			printf("%d\t", mas[i][j]); //вывод всех данных одной строки
+		}
+		printf("\n");//переход на новую строку
+	}
+}
+
+</code>
+	</pre>
+
+<p><b>Запомнить!!!</b></p>
+ <pre class="prettyprint">
+						<code>
+const int row = 10;   			//количество строк в массиве
+const int column = 5; 			//количество столбцов в массиве
+int mas[row][column]; 			//создание двумерного массива
+for (int i = 0; i < row; i++) 		//цикл перебирающий все строки
+for (int j = 0; j < column; j++)	//цикл перебирающий все столбцы
+mas 					//весь массив, нельзя указать название массива без номера элемента при вводе/выводе
+i    					//номер строки массива, меняется от 0 до row-1
+j    					//номер столбца массива, меняется от 0 до column-1
+mas[i][j]				//элемент массива с номером строки i и номером столбца j
+	</code>
+	</pre>
+						
+<h3>Создание многомерных массивов.</h3>
+
+	
+		<p>Аналогично с двумерным можно создать трехмерный, четырехмерный и т. д. массив.</p>
+		<p>При объявлении массива указываем ещё одни [] и для перебора всех элементов используем ещё один цикл for.</p>
+		<p>Пример использования трёхмерного массива.</p>
+<pre class="prettyprint">
+						<code>
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;time.h&gt;
+int main()
+{
+	const int row = 10;   //количество строк в массиве
+	const int column = 5; //количество столбцов в массиве
+	const int layer = 3;  //количество слоев в массиве
+	int mas[row][column]; //создаем массив на 10 строк, 5 столбцов и 3 слоя
+	srand(time(NULL));
+	//заполнение трехмерного массива 
+	for (int i = 0; i < row; i++) //цикл переберающий строки
+	{
+		for (int j = 0; j < column; j++) //цикл перебирающий столбцы
+		{
+			for (int k = 0; k < layer; k++) //цикл перебирающий слои
+			{
+				mas[i][j][k]=rand()%100; //заполнение случайными числами
+			}
+		}
+	}
+
+	//вывод массива
+	for (int i = 0; i < row; i++)
+	{
+		for (int j = 0; j < column; j++)
+		{
+			for (int k = 0; k < layer; k++)
+			{
+				printf("%d\t", mas[i][j][k]); //вывод всех данных одной строки
+			}
+		printf("\n");//переход на новую строку
+		}
+	printf("\n\n");//переход на новый слой
+	}
+}
+
+</code>
+	</pre>
+
+<p>Аналогично можно создать массив любой размерности, но больше трехмерного я не рекомендую создавать. Это сильно усложняет код.</p>
+
+	
+		<h2>Задачи</h2>
+		<ul>
+			<li>Написать программу для хранения оценок всех учеников в классе по одному предмету.
+				С помощью данной программы можно:
+				<ul>
+					<li>добавить оценку ученику;</li>
+					<li>отредактировать оценку ученика;</li>
+					<li>вывести все оценки одного ученика;</li>
+					<li>вывести все оценки всех учеников;</li>
+					<li>рассчитать средний балл одного ученика;</li>
+					<li>рассчитать средний балл всех учеников;</li>
+					<li>найти ученика с самым высоким средним баллом;</li>
+					<li>найти ученика с самым низким средним баллом;</li>
+					<li>статистика оценок одного ученика.</li>
+				</ul>
+			</li>
+				<p>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample1"
+						aria-expanded="false" aria-controls="collapseExample">
+						Решение
+					</button>
+				</p>
+				<div class="collapse" id="collapseExample1">
+					<pre class="prettyprint">
+						<code>
+	#define _CRT_SECURE_NO_WARNINGS
+	#include &lt;stdio.h&gt;
+	#include &lt;locale.h&gt;
+	int main()
+	{
+		setlocale(LC_ALL, "Russian");
+		int mark[30][100];
+		int count[30];
+		int statistic[10];
+		int max = 0, min = 10;
+		int menu, nmax, mmin;
+		int n, no, m, c;
+		double sum=0, sr = 0;
+		for (int i = 0; i < 30; i++)
+		{
+			count[i] = 0;
+		}
+		for (int i = 0; i < 10; i++)
+		{
+			statistic[i] = 0;
+		}
+		do
+		{
+			printf("1 - добавить оценку ученику\n");
+			printf("2 - отредактировать оценку ученику\n");
+			printf("3 - вывести все оценки одного ученика\n");
+			printf("4 - вывести все оценки всех учеников\n");
+			printf("5 - рассчитать средний балл одного ученика\n");
+			printf("6 - рассчитать средний балл всех учеников\n");
+			printf("7 - найти ученика с наивысшим средним баллом\n");
+			printf("8 - найти ученика с наименьшим средним баллом\n");
+			printf("9 - статистика оценок одного ученика\n");
+			printf("0 - выход\n");
+			scanf_s("%d", &menu);
+			switch (menu)
+			{
+			case 1:
+				do
+				{
+					printf("введите номер ученика\n");
+					scanf_s("%d", &n);
+					if (n > 30 || n < 1)
+					{
+						printf("введен не верный номер ученика, попробуйте ещё раз(допустимый номер ученика от 1 до 30)\n");
+					}
+				} while (n > 30 || n < 1);
+				do
+				{
+					printf("введите оценку ученика\n");
+					scanf_s("%d", &m);
+					if (n > 10 || n < 1)
+					{
+						printf("введена не верная оценка, попробуйте ещё раз(допустимы оценки от 1 до 10)\n");
+					}
+				} while (m < 1 || m>10);
+				mark[n - 1][count[n - 1]] = m;
+				count[n - 1]++;
+				break;
+			case 2:
+				do
+				{
+					printf("введите номер ученика\n");
+					scanf_s("%d", &n);
+					if (n > 30 || n < 1)
+					{
+						printf("введен не верный номер ученика, попробуйте ещё раз(допустимый номер ученика от 1 до 30)\n");
+					}
+				} while (n > 30 || n < 1);
+				do
+				{
+					printf("введите номер оценки\n");
+					scanf_s("%d", &no);
+					if (no > count[n - 1] || no < 1)
+					{
+						printf("введен не верный номер оценки, попробуйте ещё раз(допустимый номер ученика от 1 до %d)\n", count[n - 1]);
+					}
+				} while (no > count[n - 1] || no < 1);
+				do
+				{
+					printf("введите оценку ученика\n");
+					scanf_s("%d", &m);
+					if (n > 10 || n < 1)
+					{
+						printf("введена не верная оценка, попробуйте ещё раз(допустимы оценки от 1 до 10)\n");
+					}
+				} while (m < 1 || m > 10);
+				mark[n - 1][no - 1] = m;
+				break;
+			case 3:
+				do
+				{
+					printf("введите номер ученика\n");
+					scanf_s("%d", &n);
+					if (n > 30 || n < 1)
+					{
+						printf("введен не верный номер ученика, попробуйте ещё раз(допустимый номер ученика от 1 до 30)\n");
+					}
+				} while (n > 30 || n < 1);
+				for (int i = 0; i < count[n - 1]; i++)
+				{
+					printf("%d\n", mark[n - 1][i]);
+				}
+				break;
+			case 4:
+				for (int i = 0; i < 30; i++)
+				{
+					for (int j = 0; j < count[i]; j++)
+					{
+						printf("%d\n", mark[i][j]);
+					}
+
+				}
+				break;
+			case 5:
+				do
+				{
+					printf("введите номер ученика\n");
+					scanf_s("%d", &n);
+					if (n > 30 || n < 1)
+					{
+						printf("введен не верный номер ученика, попробуйте ещё раз(допустимый номер ученика от 1 до 30)\n");
+					}
+				} while (n > 30 || n < 1);
+				sr = 0;
+				for (int i = 0; i < count[n - 1]; i++)
+				{
+					sr = sr + mark[n - 1][i];
+				}
+				sr = sr / count[n - 1];
+				printf("%lf\n", sr);
+				break;
+			case 6:
+				c = 0;
+				sr = 0;
+				for (int i = 0; i < 30; i++)
+				{
+					for (int j = 0; j < count[i]; j++)
+					{
+						sr = sr + mark[i][j];
+					}
+					c = c + count[i];
+
+				}
+				sr = sr / c;
+				printf("%lf\n", sr);
+				break;
+			case 7:
+				for (int i = 0; i < 30; i++)
+				{
+					sr = 0;
+					for (int j = 0; j < count[i]; j++)
+					{
+						sr = sr + mark[i][j];
+
+					}
+					sr = sr / count[i];
+					if (max < sr)
+					{
+						max = sr;
+						nmax = i;
+					}
+				}
+				printf("ученик с самым высоким средним баллом №%d имеет средний балл %d\n", nmax + 1, max);
+				break;
+			case 8:
+				for (int i = 0; i < 30; i++)
+				{
+					sr = 0;
+					for (int j = 0; j < count[i]; j++)
+					{
+						sr = sr + mark[i][j];
+					}
+					sr = sr / count[i];
+					if (min > sr)
+					{
+						min = sr;
+						mmin = i;
+					}
+				}
+				printf("ученик с самым низким средним баллом №%d имеет средний балл %d\n", mmin + 1, min);
+				break;
+			case 9:
+				do
+				{
+					printf("введите номер ученика\n");
+					scanf_s("%d", &n);
+					if (n > 30 || n < 1)
+					{
+						printf("введен не верный номер ученика, попробуйте ещё раз(допустимый номер ученика от 1 до 30)\n");
+					}
+				} while (n > 30 || n < 1);
+				for (int i = 0; i < count[n - 1]; i++)
+				{
+					for(int j = 1; j<=10; j++)
+					{
+						if (mark[n - 1][i] == j)
+						{
+							statistic[j - 1]++;
+							break;
+						}
+					}
+				}
+				for (int i = 0; i < 10; i++)
+				{
+					printf("%d - %d\n", i + 1, statistic[i]);
+				}
+				break;
+			}
+		} while (menu != 0);
+	return 0;
+	}
+						</code>
+					</pre>
+				</div>
+			
+							
+		</ul>
+			</main>
+	
+</body>
+
+</html>
